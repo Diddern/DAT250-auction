@@ -24,3 +24,6 @@ hs_err_pid*
 docs/.texpadtmp/Assignment1.aux
 docs/.texpadtmp/Assignment1.out
 docs/.texpadtmp/Assignment1.synctex.gz
+
+
+build/
