@@ -22,7 +22,6 @@ public class Message implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String message;
 
     public String getMessage() {
         return message;
@@ -31,6 +30,7 @@ public class Message implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+    private String message;
 
     public Long getId() {
         return id;
@@ -62,7 +62,7 @@ public class Message implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Message[ id=" + id + " ]";
+        return "entiti.Messages[ id=" + id + " ]";
     }
     
 }

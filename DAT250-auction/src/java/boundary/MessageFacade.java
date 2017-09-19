@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class MessageFacade extends AbstractFacade<Message> {
 
-    @PersistenceContext(unitName = "SimpleEE6AppPU")
+    @PersistenceContext(unitName = "DAT250-auctionPU")
     private EntityManager em;
 
     @Override
