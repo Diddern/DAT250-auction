@@ -32,9 +32,9 @@ and open the template in the editor.
                     </div>
                     <div class="form-row">
                         <h:outputLabel value="Categories"/>
-                        <select name="categories">
+                        <select name="categories" value="#{AuctionView.auction.category}">
                             <ui:repeat var="category" value="#{CategoryView.allCategories}">
-                                <option value="#{category.name}"> #{category.name} </option> 
+                                <option value="#{category}"> #{category.name} </option> 
                             </ui:repeat>
                         </select>
                     </div>
