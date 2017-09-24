@@ -7,6 +7,11 @@
     </h:head>
     <h:body>
         <h:outputLabel value="Thank you. Your auction has been posted."/>
+        <h:outputLabel value="Product name: "/>
+        <h:outputText value="#{AuctionView.auction.product_name}"/>
+        <h:outputLabel value=" has been put up for sale under the "/>
+        <h:outputText value="#{AuctionView.auction.category.name}"/>
+        <h:outputLabel value=" category!"/>
     </h:body>
 </html>
 
