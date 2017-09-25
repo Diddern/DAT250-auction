@@ -19,7 +19,7 @@ and open the template in the editor.
             <f:view>
                 <h:form>
                     <div class="form-row">
-                        <h:outputLabel  value="Heading"/><h:inputText value="#{AuctionView.auction.product_name}"/>
+                        <h:outputLabel value="Product name"/><h:inputText value="#{AuctionView.auction.product_name}"/>
                     </div>
                     <div class="form-row">
                         <h:outputLabel value="Description"/><h:inputText value="#{AuctionView.auction.description}"/>
@@ -31,12 +31,10 @@ and open the template in the editor.
                         <h:outputLabel  value="Duration in hours"/><h:inputText value="#{AuctionView.auction.unix_end_time}"/>
                     </div>
                     <div class="form-row">
-                        <h:outputLabel value="Categories"/>
-                        <select name="categories">
-                            <ui:repeat var="category" value="#{CategoryView.allCategories}">
-                                <option value="#{category.name}"> #{category.name} </option> 
-                            </ui:repeat>
-                        </select>
+                        <h:selectOneMenu value="#{AuctionView.auction.category}" converter="category">
+                            <f:selectItems value="#{CategoryView.allCategories}" var="category"
+                                           itemLabel="#{category.name}" itemValue="#{category}" />
+                        </h:selectOneMenu>
                     </div>
                     <div class="button">
                         <h:commandButton class="postButton" action="#{AuctionView.postAuction}" value="Start Auction"/>

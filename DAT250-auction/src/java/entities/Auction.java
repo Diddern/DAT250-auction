@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -26,6 +27,8 @@ public class Auction implements Serializable {
     private String description;
     private Long min_price;
     private Long unix_end_time;
+    @ManyToOne
+    private Category category;
 
     public String getProduct_name() {
         return product_name;
@@ -56,7 +59,7 @@ public class Auction implements Serializable {
     }
 
     public void setUnix_end_time(Long hours) {
-        this.unix_end_time = System.currentTimeMillis() + (hours*3600*1000000000);
+        this.unix_end_time = System.currentTimeMillis() + (hours*3600*1000);
     }
     
     public Long getId() {
@@ -65,6 +68,14 @@ public class Auction implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public Category getCategory() {
+        return this.category;
+    }
+    
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
