@@ -1,0 +1,45 @@
+body{
+    background-color: lightgray
+}
+
+.container{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    flex-direction: row;
+    width: 75vw;
+}
+
+.inner-container{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 40vw;
+    padding: 5%;
+    margin: 5%;
+}
+
+.inner-container_seller{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 15vw;
+    padding: 1%;
+    margin: 5%;
+}
+
+.form-row{
+    padding: 10px;
+    display: flex;
+}
+
+.form-column{
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBySide{
+    display: flex;
+    flex-direction: column;
+}

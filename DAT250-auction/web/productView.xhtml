@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>fint.no</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body>
+        <div class="container">
+            <h:outputStylesheet name="css/productView.css"/>
+            
+            <div class='inner-container'>
+            <div class="form-row">
+                <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+            </div>
+                <div class='sideBySide'>
+                    <div class="form-row">
+                        <h:outputLabel  value="Name"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Description:"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="insertDescription"/>
+                    </div>
+                </div>
+            </div>
+            <div class='inner-container_seller'>
+                <div class="form-row">
+                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                </div>
+                <div class="form-row">
+                    <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
+                </div>
+                <div class="form-row">
+                    <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
+                </div>
+                <div class="form-row">
+                    <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
