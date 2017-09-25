@@ -27,21 +27,17 @@ and open the template in the editor.
             </div>
             <div class='inner-container'>
                 
-                <ui:repeat var="category" value="#{CategoryView.allCategories}">
+                <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
                     <div class="form-row">
-                        <h:outputLabel  value="instertName"/>
+                        <h:outputLabel  value="#{auction.product_name}"/>
                     </div>
                     <div class="form-row">
                         <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
                     </div>
                     <div class="form-row">
-                        <h:outputLabel  value="Number of bids:"/><h:outputLabel  value="insertNumberOfBids"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Time remaining:"/><h:outputLabel  value="insertTimeRemaining"/>
-                        <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Log in to bid"/>
-                    </div>
-                    <p> #{category.name} </p> 
+                        <h:outputLabel  value="Time remaining:"/><h:outputLabel  value="#{auction.remainingTime}"/>
+                        <h:commandButton class='loginButton' value="Log in to bid"/>
+                    </div> 
                 </ui:repeat>
                 
             </div>

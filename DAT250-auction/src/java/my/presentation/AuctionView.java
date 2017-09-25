@@ -7,6 +7,10 @@ package my.presentation;
 
 import boundary.AuctionFacade;
 import entities.Auction;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -32,6 +36,14 @@ public class AuctionView {
     
     public Auction getAuction() {
         return this.auction;
+    }
+        
+    public List<Auction> getAllAuctions() {
+        long now = System.currentTimeMillis();
+        return auctionFacade.findAll()
+                .stream()
+                .filter(a -> a.getUnix_end_time() > now)
+                .collect(Collectors.toList());
     }
        
     public String postAuction() {

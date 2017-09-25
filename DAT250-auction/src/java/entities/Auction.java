@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -29,6 +30,16 @@ public class Auction implements Serializable {
     private Long unix_end_time;
     @ManyToOne
     private Category category;
+    @OneToOne
+    private Bid bid;
+
+    public Bid getBid() {
+        return bid;
+    }
+
+    public void setBid(Bid bid) {
+        this.bid = bid;
+    }
 
     public String getProduct_name() {
         return product_name;
@@ -83,6 +94,15 @@ public class Auction implements Serializable {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
         return hash;
+    }
+    
+     public String getRemainingTime() {
+        long totalSecs = (this.unix_end_time - System.currentTimeMillis()) / 1000;
+        long hours = totalSecs / 3600;
+        long minutes = (totalSecs % 3600) / 60;
+        long seconds = totalSecs % 60;
+
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);           
     }
 
     @Override
