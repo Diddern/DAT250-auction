@@ -33,14 +33,17 @@ and open the template in the editor.
                                 <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
                             </div>
                             <div class='sideBySide'>
-                                <div class="form-row">
-                                    <h:outputLabel  value="#{auction.product_name}"/>
+                                <div class="form-row auction-header">
+                                    <h:outputLabel value="#{auction.product_name}"/>
                                 </div>
-                                <div class="form-row">
-                                    <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
+                                <div class="form-row main-view-label">
+                                    <h:outputLabel value="#{auction.bid.amount}" rendered="#{auction.bid != null}"/>
+                                    <h:outputLabel value="#{auction.min_price}" rendered="#{auction.bid == null}"/>
+                                    <h:outputLabel value="$ is the current bid" rendered="#{auction.bid != null}"/>
+                                    <h:outputLabel value="$ is the minimum bid" rendered="#{auction.bid == null}"/>
                                 </div>
-                                <div class="form-row">
-                                    <h:outputLabel  value="Time remaining: "/><h:outputLabel  value=" #{auction.remainingTime}"/>
+                                <div class="form-row main-view-label">
+                                    <h:outputLabel  value=" #{auction.remainingTime}"/>
                                 </div>
                             </div>
                             <div class='buttonLogin'>

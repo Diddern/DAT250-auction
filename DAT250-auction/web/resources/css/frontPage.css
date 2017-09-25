@@ -59,3 +59,13 @@ body{
     justify-content: flex-end;
     margin-top: 15vh;
 }
+
+.auction-header {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.main-view-label {
+    font-size: 18px;
+    color: #5f6266;
+}
