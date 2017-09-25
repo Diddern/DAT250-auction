@@ -22,10 +22,21 @@ body{
     padding: 10px;
     display: flex;
 }
+
+.form-column{
+    display: flex;
+    flex-direction: row;
+}
+
+.sideBySide{
+    display: flex;
+    flex-direction: column;
+}
 .searchBar{
     height: 50px;
     flex: 3;
     margin-right: 20px;
+    font-size: 40px;
 }
 
 .searchButton{
@@ -38,9 +49,13 @@ body{
 }
 
 .loginButton{
-    font-size: 30px;
-    height: 40px;
+    font-size: 20px;
     border-radius: 1px;
     color: white;
-    background-color: #01c64c
+    background-color: #01c64c;
+}
+
+.buttonLogin{
+    justify-content: flex-end;
+    margin-top: 15vh;
 }
