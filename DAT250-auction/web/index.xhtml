@@ -25,29 +25,31 @@ and open the template in the editor.
             <div class="form-row">
                 <h1>Recommended for you</h1>
             </div>
-            <div class='inner-container'>
-                <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
-                    <div class='form-column'>
-                        <div class="form-row">
-                            <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
-                        </div>
-                        <div class='sideBySide'>
+            <h:form>
+                <div class='inner-container'>
+                    <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
+                        <div class='form-column'>
                             <div class="form-row">
-                                <h:outputLabel  value="#{auction.product_name}"/>
+                                <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
                             </div>
-                            <div class="form-row">
-                                <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
+                            <div class='sideBySide'>
+                                <div class="form-row">
+                                    <h:outputLabel  value="#{auction.product_name}"/>
+                                </div>
+                                <div class="form-row">
+                                    <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
+                                </div>
+                                <div class="form-row">
+                                    <h:outputLabel  value="Time remaining: "/><h:outputLabel  value=" #{auction.remainingTime}"/>
+                                </div>
                             </div>
-                            <div class="form-row">
-                                <h:outputLabel  value="Time remaining:"/><h:outputLabel  value="#{auction.remainingTime}"/>
+                            <div class='buttonLogin'>
+                                <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Log in to bid"/>
                             </div>
                         </div>
-                        <div class='buttonLogin'>
-                            <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Log in to bid"/>
-                        </div>
-                    </div>
-                </ui:repeat>
-            </div>
+                    </ui:repeat>
+                </div>
+            </h:form>
         </div>
     </body>
 </html>

@@ -43,6 +43,7 @@ public class AuctionView {
         return auctionFacade.findAll()
                 .stream()
                 .filter(a -> a.getUnix_end_time() > now)
+                .sorted((a,b) -> Long.compare(a.getUnix_end_time(), b.getUnix_end_time()))
                 .collect(Collectors.toList());
     }
        

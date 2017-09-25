@@ -30,6 +30,7 @@ public class Auction implements Serializable {
     private Long unix_end_time;
     @ManyToOne
     private Category category;
+    
     @OneToOne
     private Bid bid;
 
@@ -100,9 +101,8 @@ public class Auction implements Serializable {
         long totalSecs = (this.unix_end_time - System.currentTimeMillis()) / 1000;
         long hours = totalSecs / 3600;
         long minutes = (totalSecs % 3600) / 60;
-        long seconds = totalSecs % 60;
-
-        return String.format("%02d:%02d:%02d", hours, minutes, seconds);           
+        String ret = hours == 0 ? "" : hours == 1 ? "1 hour, " : hours + " hours, ";
+        return ret + (minutes == 1 ? "1 minute left" : minutes + " minutes left");
     }
 
     @Override
