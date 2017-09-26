@@ -44,6 +44,14 @@ public class AuctionView {
                 .sorted((a,b) -> Long.compare(a.getUnix_end_time(), b.getUnix_end_time()))
                 .collect(Collectors.toList());
     }
+    
+    public String index() {
+        return "index";
+    }
+    
+    public Auction getSingleAuction(Long singleAuctionId) {
+        return this.auctionFacade.find(singleAuctionId);
+    }
        
     public String postAuction() {
         this.auctionFacade.create(this.auction);

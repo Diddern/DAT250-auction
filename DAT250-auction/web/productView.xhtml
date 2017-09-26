@@ -6,12 +6,17 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>fint.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
+        
+        <c:set var="singleAuctionId" value="#{navigationController.singleAuctionId}" />
+        <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         
         <img src='resources/images/logo.png'></img>
         
@@ -24,7 +29,7 @@ and open the template in the editor.
             </div>
                 <div class='sideBySide'>
                     <div class="form-row">
-                        <h:outputLabel  value="name"/>
+                        <h:outputLabel  value="#{auction.product_name}"/>
                     </div>
                     <div class="form-row">
                         <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
@@ -61,10 +66,10 @@ and open the template in the editor.
                             <h:outputLabel value="Ends in "/><h:outputLabel value="insertTimeLeft"/>
                         </div>
                         <div class="form-row">
-                            <h:inputText class='yourBid' value=""/>
+                            <h:inputText class='yourBid' value="$$$"/>
                         </div>
                         <div class="form-row">
-                            <h:commandButton class='enterBid' action="#{MessageView.postMessage}" value="Place bid"/>
+                            <h:commandButton class='enterBid' action="#{AuctionView.index}" value="Place bid"/>
                         </div>
                     </h:form>
                 </div>
