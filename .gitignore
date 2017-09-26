@@ -25,6 +25,7 @@ docs/.texpadtmp/Assignment1.out
 docs/.texpadtmp/Assignment1.synctex.gz
 
 .DS_Store
+.idea/
 
 build/
 /DAT250-auction/nbproject/private/
