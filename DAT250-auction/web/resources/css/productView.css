@@ -18,15 +18,16 @@ body{
     width: 40vw;
     padding: 5%;
     margin: 5%;
+    flex: 2;
 }
 
 .inner-container_seller{
     display: flex;
-    background-color: white;
     flex-direction: column;
     width: 15vw;
     padding: 1%;
     margin: 5%;
+    
 }
 
 .form-row{
@@ -42,4 +43,22 @@ body{
 .sideBySide{
     display: flex;
     flex-direction: column;
+    
+}
+
+.test{
+    flex: 1;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.enterBid{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01c64c;
+}
+
+.yourBid{
+    font-size: 17px;
 }
