@@ -48,16 +48,9 @@ body{
     background-color: #01f5ff
 }
 
-.loginButton{
-    font-size: 20px;
-    border-radius: 1px;
-    color: white;
-    background-color: #01c64c;
-}
-
 .buttonLogin{
-    justify-content: flex-end;
-    margin-top: 15vh;
+    margin-left: auto;
+    align-self: center;
 }
 
 .auction-header {
@@ -68,4 +61,29 @@ body{
 .main-view-label {
     font-size: 18px;
     color: #5f6266;
+}
+.topMenu{
+    display: flex;
+}
+
+.topButtons{
+    flex: 1;
+}
+
+.logo{
+    flex: 5;
+}
+
+.signOut{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01f5ff;
+}
+
+.loginButton{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01c64c;
 }

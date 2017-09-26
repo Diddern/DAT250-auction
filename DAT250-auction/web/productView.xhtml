@@ -12,6 +12,15 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
+        <div class="topMenu">
+            <div class="logo">
+                <img src='resources/images/logo.png'></img>
+            </div>
+            <div class="topButtons">
+                <h:button class='loginButton'  value="My account"/>
+                <h:button class='signOut'  value="Sign out"/>
+            </div>
+        </div>
         <div class="container">
             <h:outputStylesheet name="css/productView.css"/>
             
@@ -21,7 +30,7 @@ and open the template in the editor.
             </div>
                 <div class='sideBySide'>
                     <div class="form-row">
-                        <h:outputLabel  value="Name"/>
+                        <h:outputLabel  value="name"/>
                     </div>
                     <div class="form-row">
                         <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
@@ -35,17 +44,35 @@ and open the template in the editor.
                 </div>
             </div>
             <div class='inner-container_seller'>
-                <div class="form-row">
-                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                <div class="test">
+                    <div class="form-row">
+                        <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
-                </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
-                </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                <div class="test">
+                    <h:form>
+                        <div class="form-row">
+                            <h:outputLabel value="Current bid:"/><h:outputLabel value="insertBid"/>
+                        </div>
+                        <div class="form-row">
+                            <h:outputLabel value="Ends in "/><h:outputLabel value="insertTimeLeft"/>
+                        </div>
+                        <div class="form-row">
+                            <h:inputText class='yourBid' value=""/>
+                        </div>
+                        <div class="form-row">
+                            <h:commandButton class='enterBid' action="#{MessageView.postMessage}" value="Place bid"/>
+                        </div>
+                    </h:form>
                 </div>
             </div>
         </div>

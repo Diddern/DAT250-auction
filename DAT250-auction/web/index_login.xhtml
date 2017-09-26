@@ -18,7 +18,8 @@ and open the template in the editor.
                 <img src='resources/images/logo.png'></img>
             </div>
             <div class="topButtons">
-                <h:button class='signOut'  value="Sign in"/>
+                <h:button class='loginButton'  value="My account"/>
+                <h:button class='signOut'  value="Sign out"/>
             </div>
         </div>
         <div class="container">
@@ -54,7 +55,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div class='buttonLogin'>
-                                <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Log in to view details"/>
+                                <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Details"/>
                             </div>
                         </div>
                     </ui:repeat>
