@@ -56,8 +56,8 @@ body{
 }
 
 .buttonLogin{
-    justify-content: flex-end;
-    margin-top: 15vh;
+    margin-left: auto;
+    align-self: center;
 }
 
 .auction-header {
