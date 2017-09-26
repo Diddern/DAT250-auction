@@ -35,17 +35,35 @@ and open the template in the editor.
                 </div>
             </div>
             <div class='inner-container_seller'>
-                <div class="form-row">
-                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                <div class="test">
+                    <div class="form-row">
+                        <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
+                    </div>
+                    <div class="form-row">
+                        <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                    </div>
                 </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
-                </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
-                </div>
-                <div class="form-row">
-                    <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                <div class="test">
+                    <h:form>
+                        <div class="form-row">
+                            <h:outputLabel value="Current bid:"/><h:outputLabel value="insertBid"/>
+                        </div>
+                        <div class="form-row">
+                            <h:outputLabel value="Ends in "/><h:outputLabel value="insertTimeLeft"/>
+                        </div>
+                        <div class="form-row">
+                            <h:inputText class='yourBid' value=""/>
+                        </div>
+                        <div class="form-row">
+                            <h:commandButton class='enterBid' action="#{MessageView.postMessage}" value="Place bid"/>
+                        </div>
+                    </h:form>
                 </div>
             </div>
         </div>
