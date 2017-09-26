@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:custom="http://example.com">
     <h:head>
         <title>fint.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -28,17 +29,16 @@ and open the template in the editor.
                 <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
             </div>
                 <div class='sideBySide'>
-                    <div class="form-row">
-                        <h:outputLabel  value="#{auction.product_name}"/>
+                    <div class="form-row flex-column">
+                        <h:outputLabel class="auction-header" value="#{auction.product_name}"/>
+                        <h:outputLabel class="category-label" value="#{auction.category.name}" />
                     </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Current highest bid:"/><h:outputLabel  value="insertHighestBid"/>
+                    <div class="form-row flex-column">
+                        <custom:currentBidComponent auction="#{auction}"/>
                     </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Description:"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="insertDescription"/>
+                    <div class="form-row flex-column">
+                        <h:outputLabel class="description-header" value="Description"/>
+                        <h:outputLabel class="info-text" value="#{auction.description}"/>
                     </div>
                 </div>
             </div>
