@@ -57,3 +57,7 @@ and open the template in the editor.
     border: transparent;
     border-radius: 5%;
 }
+
+.header {
+    display: flex;
+}
