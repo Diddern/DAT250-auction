@@ -97,27 +97,28 @@ body{
 .info-text {
     font-size: 20px;
     color: #5f6266;
-
-.topMenu{
+}
+    
+.topMenu {
     display: flex;
 }
 
-.topButtons{
+.topButtons {
     flex: 1;
 }
 
-.logo{
+.logo {
     flex: 5;
 }
 
-.signOut{
+.signOut {
     font-size: 20px;
     border-radius: 1px;
     color: white;
     background-color: #01f5ff;
 }
 
-.loginButton{
+.loginButton {
     font-size: 20px;
     border-radius: 1px;
     color: white;
