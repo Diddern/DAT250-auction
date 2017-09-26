@@ -13,7 +13,15 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
-        <img src='resources/images/logo.png'></img>
+        <div class="topMenu">
+            <div class="logo">
+                <img src='resources/images/logo.png'></img>
+            </div>
+            <div class="topButtons">
+                <h:button class='loginButton'  value="My account"/>
+                <h:button class='signOut'  value="Sign out"/>
+            </div>
+        </div>
         <div class="container">
             <h:outputStylesheet name="css/frontPage.css"/>
             <h:form>

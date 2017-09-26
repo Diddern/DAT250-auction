@@ -48,13 +48,6 @@ body{
     background-color: #01f5ff
 }
 
-.loginButton{
-    font-size: 20px;
-    border-radius: 1px;
-    color: white;
-    background-color: #01c64c;
-}
-
 .buttonLogin{
     margin-left: auto;
     align-self: center;
@@ -68,4 +61,29 @@ body{
 .main-view-label {
     font-size: 18px;
     color: #5f6266;
+}
+.topMenu{
+    display: flex;
+}
+
+.topButtons{
+    flex: 1;
+}
+
+.logo{
+    flex: 5;
+}
+
+.signOut{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01f5ff;
+}
+
+.loginButton{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01c64c;
 }
