@@ -18,19 +18,14 @@ and open the template in the editor.
                 <img src='resources/images/logo.png'></img>
             </div>
             <div class="topButtons">
-                <h:button class='signOut'  value="Sign in"/>
+                <h:button class='signOut'  value="Sign out"/>
             </div>
         </div>
         <div class="container">
-            <h:outputStylesheet name="css/frontPage.css"/>
-            <h:form>
-                <div class="form-row">
-                    <h:inputText class='searchBar' value=""/>
-                    <h:commandButton class='searchButton' action="#{MessageView.postMessage}" value="Search"/>
-                </div>
-            </h:form>
+            <h:outputStylesheet name="css/myAccount.css"/>
+            <h:button class='sellItem' value="Sell item"/>
             <div class="form-row">
-                <h1>Recommended for you</h1>
+                <h1>Your items</h1>
             </div>
             <h:form>
                 <div class='inner-container'>
@@ -54,7 +49,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div class='buttonLogin'>
-                                <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Log in to view details"/>
+                                <h:commandButton class='loginButton' action="#{MessageView.postMessage}" value="Cancel"/>
                             </div>
                         </div>
                     </ui:repeat>
