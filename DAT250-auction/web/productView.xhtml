@@ -17,19 +17,19 @@ and open the template in the editor.
         <c:set var="singleAuctionId" value="#{navigationController.singleAuctionId}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
 
-        <div class="topMenu">
+        <div class="top-menu">
             <div class="logo">
                 <img src='resources/images/logo.png'></img>
             </div>
-            <div class="topButtons">
-                <h:button class='loginButton'  value="My account"/>
-                <h:button class='signOut'  value="Sign out"/>
+            <div class="top-buttons">
+                <h:button class='login-button'  value="My account"/>
+                <h:button class='sign-out'  value="Sign out"/>
             </div>
         </div>
         <div class="container">
             <h:outputStylesheet name="css/productView.css"/>
             
-            <div class='inner-container'>
+            <div class='inner-main-container'>
             <div class="form-row">
                 <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
             </div>
@@ -47,34 +47,30 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-            <div class='inner-container_seller'>
-                <div class="test">
-                    <div class="form-row">
-                        <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+            <div class='inner-sidebar-containter'>
+                <div class="sidebar-seller-container">
+                    <div class="form-row seller-image-container">
+                        <img class="seller-image"
+                             src='http://www.iconarchive.com/download/i102645/graphicloads/flat-finance/person.ico'/>
                     </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Seller: "/><h:outputLabel  value="insertSellerName"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Phone: "/><h:outputLabel  value="instertPhone"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Email: "/><h:outputLabel  value="insertEmail"/>
+                    <div class="form-row flex-align-center">
+                        <h:outputLabel value="James Bond"/>
+                        <h:outputLabel value="+007 404 66 599"/>
+                        <h:outputLabel value="bond@james.com"/>
                     </div>
                 </div>
-                <div class="test">
-                    <h:form>
-                        <div class="form-row">
-                            <h:outputLabel value="Current bid:"/><h:outputLabel value="insertBid"/>
+                <div class="sidebar-bid-info-container">
+                    <h:form class="sidebar-form">
+                        <div class="form-row flex-column">
+                            <h:outputLabel class="sidebar-bid-heading" value="Current bid"/>
+                            <h:outputLabel class="sidebar-bid-label" value="$ #{auction.bid.amount}"/>
                         </div>
                         <div class="form-row">
-                            <h:outputLabel value="Ends in "/><h:outputLabel value="insertTimeLeft"/>
+                            <h:outputLabel class="sidebar-time-label" value="#{auction.remainingTime}"/>
                         </div>
-                        <div class="form-row">
-                            <h:inputText class='yourBid' value="$$$"/>
-                        </div>
-                        <div class="form-row">
-                            <h:commandButton class='enterBid' action="#{AuctionView.index}" value="Place bid"/>
+                        <div class="form-row flex-column">
+                            <h:inputText class='your-bid bid-input' value="#{auction.bid.amount}"/>
+                            <h:commandButton class='enter-bid bid-button' action="#{AuctionView.index}" value="Place bid"/>
                         </div>
                     </h:form>
                 </div>

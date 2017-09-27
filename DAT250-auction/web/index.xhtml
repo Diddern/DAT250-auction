@@ -15,12 +15,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
-        <div class="topMenu">
+        <div class="top-menu">
             <div class="logo">
                 <img src='resources/images/logo.png'></img>
             </div>
-            <div class="topButtons">
-                <h:button class='signOut'  value="Sign in"/>
+            <div class="top-buttons">
+                <h:button class='sign-out'  value="Sign in"/>
             </div>
         </div>
         <div class="container">
@@ -35,7 +35,7 @@ and open the template in the editor.
                 <h1>Recommended for you</h1>
             </div>
             <h:form>
-                <div class='inner-container'>
+                <div class='inner-main-container'>
                     <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
                         <div class='form-column'>
                             <div class="form-row">
@@ -53,7 +53,7 @@ and open the template in the editor.
                                 </div>
                             </div>
                             <div class='buttonLogin'>
-                                <h:commandButton class='loginButton' action="#{navigationController.goToSingleView}" value="View auction">
+                                <h:commandButton class='login-button' action="#{navigationController.goToSingleView}" value="View auction">
                                     <f:param name = "singleAuctionId" value = "#{auction.id}"/>
                                 </h:commandButton>
                             </div>

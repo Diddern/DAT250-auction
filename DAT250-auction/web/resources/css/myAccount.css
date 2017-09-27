@@ -11,7 +11,7 @@ body{
     width: 50vw;
 }
 
-.inner-container{
+.inner-main-container{
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -62,11 +62,11 @@ body{
     font-size: 18px;
     color: #5f6266;
 }
-.topMenu{
+.top-menu{
     display: flex;
 }
 
-.topButtons{
+.top-buttons{
     flex: 1;
 }
 
@@ -74,14 +74,14 @@ body{
     flex: 5;
 }
 
-.signOut{
+.sign-out{
     font-size: 20px;
     border-radius: 1px;
     color: white;
     background-color: #01f5ff;
 }
 
-.loginButton{
+.login-button{
     font-size: 20px;
     border-radius: 1px;
     color: white;
