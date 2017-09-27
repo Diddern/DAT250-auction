@@ -9,19 +9,21 @@
     <h:body>
         <div class="header">
             <img src='resources/images/logo.png'></img>
+            <h:outputStylesheet name="css/style.css"  />
+            <h:outputStylesheet name="css/login.css"  />
+            <h:outputStylesheet name="font-awesome/css/font-awesome.min.css" />
+
         </div>
         <div class="container">
-        <h:outputStylesheet name="css/style.css" />
-        <h:outputStylesheet name="css/login.css" />
-        <h:outputStylesheet name="font-awesome/css/font-awesome.min.css" />
+            <h1>Welcome to Fint</h1>
             <form action="j_security_check" method="POST">
                 <div class="form-row">
                     <input class="inputField" id="un" type="text" 
-                           name ="j_username" placeholder="Username"/>
+                           name ="j_username" placeholder="Brukernavn"/>
                 </div>
                 <div class ="form-row">
                     <input class="inputField" id="pw" type="password" 
-                           name="j_password" placeholder="Password"/>
+                           name="j_password" placeholder="Passord"/>
                 </div>
                 <div class="form-button">
                     <input id="submitButton" type="submit" value="Sign In" />
