@@ -32,14 +32,14 @@ body{
     display: flex;
     flex-direction: column;
 }
-.searchBar{
+.search-bar{
     height: 50px;
     flex: 3;
     margin-right: 20px;
     font-size: 40px;
 }
 
-.searchButton{
+.search-button{
     flex: 1;
     font-size: 40px;
     height: 55px;
@@ -48,7 +48,7 @@ body{
     background-color: #01f5ff
 }
 
-.buttonLogin{
+.button-login{
     margin-left: auto;
     align-self: center;
 }

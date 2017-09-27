@@ -15,52 +15,52 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
-        <div class="top-menu">
-            <div class="logo">
-                <img src='resources/images/logo.png'></img>
-            </div>
-            <div class="top-buttons">
-                <h:button class='sign-out'  value="Sign in"/>
-            </div>
-        </div>
-        <div class="container">
-            <h:outputStylesheet name="css/frontPage.css"/>
-            <h:form>
-                <div class="form-row">
-                    <h:inputText class='searchBar' value=""/>
-                    <h:commandButton class='searchButton' action="#{MessageView.postMessage}" value="Search"/>
+        <div class="outer-container"> 
+            <div class="top-menu">
+                <div class="logo">
+                    <img src='resources/images/logo.png'></img>
                 </div>
-            </h:form>
-            <div class="form-row">
+                <div class="top-buttons">
+                    <h:button class='sign-out'  value="Sign in"/>
+                </div>
+            </div>
+            <div class="container">
+                <h:outputStylesheet name="css/frontPage.css"/>
+                <h:form>
+                    <div class="search-bar-container">
+                        <h:inputText class='search-bar' value=""/>
+                        <h:commandButton class='search-button' action="#{MessageView.postMessage}" value="Search"/>
+                    </div>
+                </h:form>
                 <h1>Recommended for you</h1>
+                <h:form>
+                    <div class='inner-main-container'>
+                        <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
+                            <div class='form-column'>
+                                <div class="form-row">
+                                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                                </div>
+                                <div class='sideBySide'>
+                                    <div class="form-row auction-header">
+                                        <h:outputLabel value="#{auction.product_name}"/>
+                                    </div>
+                                    <div class="form-row main-view-label">
+                                        <custom:currentBidComponent auction="#{auction}"/>
+                                    </div>
+                                    <div class="form-row main-view-label">
+                                        <h:outputLabel  value=" #{auction.remainingTime}"/>
+                                    </div>
+                                </div>
+                                <div class='button-login'>
+                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView}" value="View auction">
+                                        <f:param name = "singleAuctionId" value = "#{auction.id}"/>
+                                    </h:commandButton>
+                                </div>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </h:form>
             </div>
-            <h:form>
-                <div class='inner-main-container'>
-                    <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
-                        <div class='form-column'>
-                            <div class="form-row">
-                                <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
-                            </div>
-                            <div class='sideBySide'>
-                                <div class="form-row auction-header">
-                                    <h:outputLabel value="#{auction.product_name}"/>
-                                </div>
-                                <div class="form-row main-view-label">
-                                    <custom:currentBidComponent auction="#{auction}"/>
-                                </div>
-                                <div class="form-row main-view-label">
-                                    <h:outputLabel  value=" #{auction.remainingTime}"/>
-                                </div>
-                            </div>
-                            <div class='buttonLogin'>
-                                <h:commandButton class='login-button' action="#{navigationController.goToSingleView}" value="View auction">
-                                    <f:param name = "singleAuctionId" value = "#{auction.id}"/>
-                                </h:commandButton>
-                            </div>
-                        </div>
-                    </ui:repeat>
-                </div>
-            </h:form>
         </div>
     </body>
 </html>
