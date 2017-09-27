@@ -16,19 +16,22 @@
         </div>
         <div class="container">
             <h1>Welcome to Fint</h1>
-            <form action="j_security_check" method="POST">
-                <div class="form-row">
-                    <input class="inputField" id="un" type="text" 
-                           name ="j_username" placeholder="Brukernavn"/>
-                </div>
-                <div class ="form-row">
-                    <input class="inputField" id="pw" type="password" 
-                           name="j_password" placeholder="Passord"/>
-                </div>
-                <div class="form-button">
-                    <input id="submitButton" type="submit" value="Sign In" />
-                </div>
-            </form>
+            <h:form>
+                <h:outputLabel for="usernameInput">
+                    #{bundle['login.username']}:
+                </h:outputLabel>
+                <h:inputText id="usernameInput" value="#{loginBean.username}" 
+                             required="true" />
+                <br />
+                <h:outputLabel for="passwordInput">
+                    #{bundle['login.password']}:
+                </h:outputLabel>
+                <h:inputSecret id="passwordInput" value="#{loginBean.password}" 
+                               required="true" />
+                <br />
+                <h:commandButton value="${bundle['login.submit']}" 
+                                 action="#{loginBean.login}" />
+            </h:form>
         </div>
     </h:body>
 </html>
