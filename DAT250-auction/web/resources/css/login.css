@@ -61,3 +61,7 @@ and open the template in the editor.
 .header {
     display: flex;
 }
+
+h1 {
+    text-align: center;
+}
