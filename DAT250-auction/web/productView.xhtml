@@ -16,6 +16,7 @@ and open the template in the editor.
     <body>
         <c:set var="singleAuctionId" value="#{navigationController.singleAuctionId}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
+        <c:set var="seller" value="#{auction.seller}" />
 
         <div class="top-menu">
             <div class="logo">
@@ -54,9 +55,9 @@ and open the template in the editor.
                              src='http://www.iconarchive.com/download/i102645/graphicloads/flat-finance/person.ico'/>
                     </div>
                     <div class="form-row flex-align-center">
-                        <h:outputLabel value="James Bond"/>
-                        <h:outputLabel value="+007 404 66 599"/>
-                        <h:outputLabel value="bond@james.com"/>
+                        <h:outputLabel value="#{seller.name}"/>
+                        <h:outputLabel value="#{seller.phoneNumber}"/>
+                        <h:outputLabel value="#{seller.email}"/>
                     </div>
                 </div>
                 <div class="sidebar-bid-info-container">

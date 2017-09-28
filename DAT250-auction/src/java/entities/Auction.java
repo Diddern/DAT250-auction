@@ -30,9 +30,20 @@ public class Auction implements Serializable {
     private Long unix_end_time;
     @ManyToOne
     private Category category;
-    
+    @ManyToOne
+    private Seller seller;
     @OneToOne
     private Bid bid;
+
+    
+    
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
 
     public Bid getBid() {
         return bid;
@@ -71,9 +82,9 @@ public class Auction implements Serializable {
     }
 
     public void setUnix_end_time(Long hours) {
-        this.unix_end_time = System.currentTimeMillis() + (hours*3600*1000);
+        this.unix_end_time = System.currentTimeMillis() + (hours * 3600 * 1000);
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -81,11 +92,11 @@ public class Auction implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public Category getCategory() {
         return this.category;
     }
-    
+
     public void setCategory(Category category) {
         this.category = category;
     }
@@ -96,8 +107,8 @@ public class Auction implements Serializable {
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
-    
-     public String getRemainingTime() {
+
+    public String getRemainingTime() {
         long totalSecs = (this.unix_end_time - System.currentTimeMillis()) / 1000;
         long hours = totalSecs / 3600;
         long minutes = (totalSecs % 3600) / 60;
@@ -122,5 +133,5 @@ public class Auction implements Serializable {
     public String toString() {
         return "entities.Auction[ id=" + id + " ]";
     }
-    
+
 }
