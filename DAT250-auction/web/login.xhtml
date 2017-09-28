@@ -5,32 +5,30 @@
     <h:head>
         <title>Login - fint.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/style.css"  />
+        <h:outputStylesheet name="css/login.css"  />
+        <h:outputStylesheet name="font-awesome/css/font-awesome.min.css" />
     </h:head>
     <h:body>
         <div class="header">
             <img src='resources/images/logo.png'></img>
-            <h:outputStylesheet name="css/style.css"  />
-            <h:outputStylesheet name="css/login.css"  />
-            <h:outputStylesheet name="font-awesome/css/font-awesome.min.css" />
-
         </div>
         <div class="container">
             <h1>Welcome to Fint</h1>
             <h:form>
-                <h:outputLabel for="usernameInput">
-                    #{bundle['login.username']}:
-                </h:outputLabel>
-                <h:inputText id="usernameInput" value="#{loginBean.username}" 
-                             required="true" />
-                <br />
-                <h:outputLabel for="passwordInput">
-                    #{bundle['login.password']}:
-                </h:outputLabel>
-                <h:inputSecret id="passwordInput" value="#{loginBean.password}" 
-                               required="true" />
-                <br />
-                <h:commandButton value="${bundle['login.submit']}" 
-                                 action="#{loginBean.login}" />
+                <h:panelGroup>
+                    <h:outputLabel for="usernameInput" value="Brukernavn">
+                        #{bundle['login.username']}:
+                    </h:outputLabel>
+                    <h:inputText id="usernameInput" value="#{loginBean.username}" required="true" />
+                    <br />
+                    <h:outputLabel for="passwordInput" value="Passord">
+                        #{bundle['login.password']}:
+                    </h:outputLabel>
+                    <h:inputSecret id="passwordInput" value="#{loginBean.password}" required="true" />
+                    <br />
+                    <h:commandButton value="${bundle['login.submit']}" action="#{loginBean.login}" />
+                </h:panelGroup>
             </h:form>
         </div>
     </h:body>

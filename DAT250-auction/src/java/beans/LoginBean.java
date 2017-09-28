@@ -6,20 +6,21 @@
 package beans;
 
 import javax.ejb.Stateless;
-import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.inject.Named;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- *
- * @author kristianrosland
+ * @author Diddern
  */
 @Stateless
 @Named(value = "loginBean")
 @Dependent
+@ManagedBean
 public class LoginBean {
 
     private String username;
