@@ -7,6 +7,7 @@ package my.presentation;
 
 import boundary.SellerFacade;
 import entities.Seller;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -34,13 +35,11 @@ public class SellerView {
         return seller;
     }
     
+    public List<Seller> getAllSellers() {
+        return sellerFacade.findAll();
+    }
+    
     public int getNumberOfSellers(){
         return sellerFacade.findAll().size();
     }
-    
-    public String postSeller(){
-        this.sellerFacade.create(seller);
-        return "theend";
-    }
-    
 }

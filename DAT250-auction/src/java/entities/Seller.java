@@ -34,6 +34,14 @@ public class Seller implements Serializable {
     @OneToMany
     private List<Auction> auctions;
 
+    public List<Auction> getAuctions() {
+        return auctions;
+    }
+
+    public void setAuctions(List<Auction> auctions) {
+        this.auctions = auctions;
+    }
+
     public String getName() {
         return name;
     }
