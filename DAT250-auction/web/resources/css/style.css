@@ -1,17 +1,3 @@
-body{
-    background-color: lightgray;
-}
-.container{
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 10%;
-}
-
-.form-row{
-    padding: 10px;
-    display: flex;
-}
-
 .form-row input{
     flex: 3;
     height: 20px;
@@ -39,30 +25,4 @@ form .postButton{
     color: white;
     background-color: #01c64c;
     border-radius: 1px; 
-}
-
-.top-menu{
-    display: flex;
-}
-
-.top-buttons{
-    flex: 1;
-}
-
-.logo{
-    flex: 5;
-}
-
-.sign-out{
-    font-size: 20px;
-    border-radius: 1px;
-    color: white;
-    background-color: #01f5ff;
-}
-
-.login-button{
-    font-size: 20px;
-    border-radius: 1px;
-    color: white;
-    background-color: #01c64c;
 }
