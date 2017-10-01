@@ -1,6 +1,17 @@
 .form-row input{
     flex: 3;
     height: 20px;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: 1px #5f6266 solid;
+    border-bottom: none;
+
+}
+
+.form-row .duration {
+    border-bottom: 1px #5f6266 solid;
+    margin-bottom: 2.5%;
 }
 
 .form-row select{

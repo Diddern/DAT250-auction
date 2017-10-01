@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-row">
                         <h:outputLabel  value="Duration in hours"/>
-                        <h:inputText value="#{AuctionView.auction.unix_end_time}" 
+                        <h:inputText class="duration" value="#{AuctionView.auction.unix_end_time}" 
                                      required="true">
                             <f:validateLongRange minimum="1" />
                         </h:inputText>
