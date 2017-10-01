@@ -22,17 +22,35 @@
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
     <security-constraint>
-        <display-name>SecurityConstraint</display-name>
+        <display-name>Access to resources</display-name>
         <web-resource-collection>
-            <web-resource-name>WRCollection</web-resource-name>
-            <description>Unrestricted access to resources</description>
-            <url-pattern>/*</url-pattern>
-        </web-resource-collection>
-        <web-resource-collection>
-            <web-resource-name>Unrestricted resources</web-resource-name>
+            <web-resource-name>resources</web-resource-name>
             <description/>
             <url-pattern>/resources/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
         </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>javax.faces.resource</web-resource-name>
+            <description/>
+            <url-pattern>/javax.faces.resource/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <description/>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>Constraint1</display-name>
+        <web-resource-collection>
+            <web-resource-name>wrcoll</web-resource-name>
+            <description/>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>AuctionUser</role-name>
+        </auth-constraint>
         <user-data-constraint>
             <description/>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
@@ -40,26 +58,14 @@
     </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>authenticationRealm</realm-name>
+        <realm-name>file</realm-name>
         <form-login-config>
             <form-login-page>/login.xhtml</form-login-page>
             <form-error-page>/login.xhtml</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
-        <description>Administrators</description>
-        <role-name>admin</role-name>
+        <description/>
+        <role-name>AuctionUser</role-name>
     </security-role>
-    <security-role>
-        <description>Regular users</description>
-        <role-name>user</role-name>
-    </security-role>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/404.xhtml</location>
-    </error-page>
-    <error-page>
-        <error-code>403</error-code>
-        <location>/403.xhtml</location>
-    </error-page>
 </web-app>

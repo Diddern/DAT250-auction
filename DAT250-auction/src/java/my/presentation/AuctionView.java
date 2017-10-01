@@ -45,6 +45,16 @@ public class AuctionView {
                 .collect(Collectors.toList());
     }
     
+    public List<Auction> getAllActiveAuctions() {
+        long now = System.currentTimeMillis();
+        return auctionFacade.findAll()
+                .stream()
+                .filter(a -> a.getUnix_end_time() > now)
+                .filter(a -> a.isIsActive())
+                .sorted((a,b) -> Long.compare(a.getUnix_end_time(), b.getUnix_end_time()))
+                .collect(Collectors.toList());
+    }
+    
     public String index() {
         return "index";
     }
@@ -57,5 +67,11 @@ public class AuctionView {
     public String postAuction() {
         this.auctionFacade.create(this.auction);
         return "auctionPosted";
+    }
+    
+    public void removeAuction(Long id){
+        Auction a = auctionFacade.find(id);
+        a.setIsActive(false);
+        auctionFacade.edit(a);
     }
 }

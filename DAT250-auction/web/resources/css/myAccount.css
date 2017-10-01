@@ -1,95 +1,12 @@
-body{
-    background-color: lightgray
-}
-
-.container{
-    display: flex;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 10%;
-    flex-direction: column;
-    width: 50vw;
-}
-
-.inner-main-container{
-    display: flex;
-    background-color: white;
-    flex-direction: column;
-    width: 50vw;
-    padding: 5%;
-}
-.form-row{
-    padding: 10px;
-    display: flex;
-}
-
-.form-column{
-    display: flex;
-    flex-direction: row;
-}
-
-.sideBySide{
-    display: flex;
-    flex-direction: column;
-}
-.search-bar{
-    height: 50px;
-    flex: 3;
-    margin-right: 20px;
-    font-size: 40px;
-}
-
-.search-button{
-    flex: 1;
-    font-size: 40px;
-    height: 55px;
-    border-radius: 1px;
+.sellItem{
+    background-color: #01c64c;
+    font-size: 30px;
     color: white;
-    background-color: #01f5ff
-}
-
-.button-login{
-    margin-left: auto;
-    align-self: center;
-}
-
-.auction-header {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.main-view-label {
-    font-size: 18px;
-    color: #5f6266;
-}
-.top-menu{
-    display: flex;
-}
-
-.top-buttons{
-    flex: 1;
-}
-
-.logo{
-    flex: 5;
-}
-
-.sign-out{
-    font-size: 20px;
-    border-radius: 1px;
-    color: white;
-    background-color: #01f5ff;
 }
 
 .login-button{
     font-size: 20px;
     border-radius: 1px;
     color: white;
-    background-color: red;
-}
-
-.sellItem{
-    background-color: #01c64c;
-    font-size: 30px;
-    color: white;
+    background-color: #d5101f;
 }

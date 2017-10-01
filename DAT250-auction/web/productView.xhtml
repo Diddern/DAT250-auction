@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -11,10 +6,13 @@ and open the template in the editor.
       xmlns:custom="http://example.com"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>fint.no</title>
+        <title>FINT.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/layout.css"/>
+        <h:outputStylesheet name="css/productView.css"/>
+
     </h:head>
-    <body>
+    <h:body>
         <c:set var="singleAuctionId" value="#{param.id}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
@@ -26,13 +24,11 @@ and open the template in the editor.
                 <img src='resources/images/logo.png'></img>
             </div>
             <div class="top-buttons">
-                <h:button class='login-button'  value="My account"/>
-                <h:button class='sign-out'  value="Sign out"/>
+                <h:button class='sign-out'  value="Sign in"/>
             </div>
         </div>
-        <div class="container">
+        <div class="container">            
             <h:outputStylesheet name="css/productView.css"/>
-
             <div class='inner-main-container'>
                 <div class="form-row">
                     <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
@@ -88,5 +84,5 @@ and open the template in the editor.
                 </div>
             </div>
         </div>
-    </body>
+    </h:body>
 </html>

@@ -1,0 +1,39 @@
+.form-row input{
+    flex: 3;
+    height: 20px;
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: 1px #5f6266 solid;
+    border-bottom: none;
+
+}
+
+.form-row .duration {
+    border-bottom: 1px #5f6266 solid;
+    margin-bottom: 2.5%;
+}
+
+.form-row select{
+    flex: 3;
+}
+
+.form-row label{
+    flex: 1;
+    padding-right: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+form .postButton{
+    font-size: 40px;
+    padding: 10px;
+    color: white;
+    background-color: #01c64c;
+    border-radius: 1px; 
+}

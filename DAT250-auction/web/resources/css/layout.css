@@ -1,0 +1,67 @@
+body{
+    background-color: lightgray;
+}
+
+.container{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.inner-main-container{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    width: 50vw;
+    padding: 5%;
+}
+
+.form-row{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+}
+
+/*Everything about the top menu*/
+
+.top-menu{
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+}
+
+.top-buttons{
+    flex: 1;
+}
+
+.logo{
+    flex: 5;
+}
+
+.sign-out{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #018aff;
+}
+
+.login-button{
+    font-size: 20px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01c64c;
+}
+
+.button-login{
+    margin-left: auto;
+    align-self: center;
+}
+
+
+.category_img{
+    width: 200px;
+    height: 200px;
+}
