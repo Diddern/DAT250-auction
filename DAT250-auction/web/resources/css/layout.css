@@ -59,3 +59,9 @@ body{
     margin-left: auto;
     align-self: center;
 }
+
+
+.category_img{
+    width: 200px;
+    height: 200px;
+}

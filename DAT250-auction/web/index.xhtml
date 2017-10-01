@@ -35,7 +35,7 @@
                         <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
                             <div class='form-column'>
                                 <div class="form-row">
-                                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                                    <img class="category_img" src="#{auction.category.img_url}"></img>
                                 </div>
                                 <div class='sideBySide'>
                                     <div class="form-row auction-header">
