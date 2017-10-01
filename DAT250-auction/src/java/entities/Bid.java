@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -26,8 +27,16 @@ public class Bid implements Serializable {
     @OneToOne
     private Auction auction; //the auction the bid is placed on
     private Long amount;
-    //@OneToMany
-    //private User user; //The user that placed the bid
+    @ManyToOne
+    private Seller seller; //The user that placed the bid
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
 
     public Auction getAuction() {
         return auction;
