@@ -4,19 +4,22 @@ body{
 
 .container{
     display: flex;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 5%;
     flex-direction: column;
-    width: 50vw;
+    width: 75vw;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inner-main-container{
     display: flex;
     background-color: white;
     flex-direction: column;
-    width: 50vw;
-    padding: 5%;
+    width: 100%;
 }
 
 .form-row{
@@ -34,11 +37,9 @@ body{
 }
 
 .top-buttons{
-    flex: 1;
 }
 
 .logo{
-    flex: 5;
 }
 
 .sign-out{
@@ -49,6 +50,15 @@ body{
 }
 
 .login-button{
+    font-size: 24px;
+    border-radius: 1px;
+    color: white;
+    background-color: #01c64c;
+    height: 75px;
+    width: 200px;
+}
+
+.my-account-button {
     font-size: 20px;
     border-radius: 1px;
     color: white;
@@ -62,6 +72,8 @@ body{
 
 
 .category_img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    padding-bottom: 25px;
+    padding-right: 25px;
 }

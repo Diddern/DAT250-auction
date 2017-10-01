@@ -1,7 +1,9 @@
 .form-column{
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
 }
 
 .sideBySide{
