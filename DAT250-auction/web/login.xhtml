@@ -11,28 +11,28 @@
         <h:outputStylesheet name="css/productView.css"/>
     </h:head>
     <h:body>
-        <div class="header">
-            <img src='resources/images/logo.png'></img>
-        </div>
-            <h1>Welcome to Fint</h1>
+        <div class="outer-container">
+            <div class="header">
+                <img src='resources/images/logo.png'></img>
+            </div>
             <h:panelGroup class="container">
                 <form id="stuff" method="POST" action="j_security_check">
                     <div class="form-row">
-                        <div class="text">Username:</div> 
+                        <div class="login-label">Username</div> 
                         <input class="inputField" id="un" type="text" name="j_username" />
                     </div>
                     <div class="form-row">
-                        <div class="text">Password:</div> 
+                        <div class="login-label">Password</div> 
                         <input class="inputField" id="pw" type="password" name="j_password" />
                     </div>
                     <br />
                     <div class="form-button">
-                    <input class="loginButtons" type="submit" value="Login" />
-                    <input class="loginButtons" type="reset" value="Reset" />
+                        <input class="loginButtons" type="submit" value="Login" />
+                        <input class="loginButtons" type="reset" value="Reset" />
                     </div>
                 </form>
             </h:panelGroup> 
-
+        </div>
     </h:body>
 </html>
 
