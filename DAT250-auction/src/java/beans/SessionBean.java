@@ -22,11 +22,18 @@ public class SessionBean implements Serializable {
            
     public String getSingleProductId() {
         FacesContext context = FacesContext.getCurrentInstance();
-        return context.getExternalContext().getSessionMap().get("singleProductId").toString();
+        Object o = context.getExternalContext().getSessionMap().get("singleProductId");
+        return o != null ? o.toString() : null;
     }
 
     public void setSingleProductId(String id) {
         FacesContext context = FacesContext.getCurrentInstance();
         context.getExternalContext().getSessionMap().put("singleProductId", id);
+    }
+    
+    public String getBidError() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        Object o = context.getExternalContext().getSessionMap().get("bidError");
+        return o != null ? o.toString() : null;
     }
 }

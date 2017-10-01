@@ -26,14 +26,6 @@ and open the template in the editor.
             </div>
             <div class="container">
                 <h:outputStylesheet name="css/frontPage.css"/>
-                <ui:remove>
-                    <h:form>
-                        <div class="search-bar-container">
-                            <h:inputText class='search-bar' value=""/>
-                            <h:commandButton class='search-button' action="#{MessageView.postMessage}" value="Search"/>
-                        </div>
-                    </h:form>
-                </ui:remove>
                 <h1>Recommended for you</h1>
                 <h:form>
                     <div class='inner-main-container'>
@@ -56,7 +48,6 @@ and open the template in the editor.
                                 <div class='button-login'>
                                     <h:commandButton class='login-button' action="#{navigationController.goToSingleView(auction.id)}" value="View auction">
                                         <f:setPropertyActionListener target="#{SessionBean.singleProductId}" value="#{auction.id}" />  
-                                        <f:param name = "singleAuctionId" value = "#{auction.id}"/>
                                     </h:commandButton>
                                 </div>
                             </div>

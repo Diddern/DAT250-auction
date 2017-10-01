@@ -19,6 +19,7 @@ and open the template in the editor.
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
         <c:set var="user_id" value="9871" />
+        <c:set var="bidError" value="#{SessionBean.bidError}" />
 
         <div class="top-menu">
             <div class="logo">
@@ -71,8 +72,10 @@ and open the template in the editor.
                             <h:outputLabel class="sidebar-time-label" value="#{auction.remainingTime}"/>
                         </div>
                         <div class="form-row flex-column">
+                            <c:if test="${not empty bidError}">
+                                <p class="bid-error"> #{bidError} </p>
+                            </c:if>
                             <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
-                            <h:messages globalOnly="true" />
                             <h:commandButton
                                 class='enter-bid bid-button'
                                 action="#{BidView.postBid}" 

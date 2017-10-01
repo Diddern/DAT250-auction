@@ -20,6 +20,6 @@ public class NavigationController implements Serializable{
     }
     
     public String goToHomePage() {
-        return "index";
+        return "index?faces-redirect=true";
     }
 }

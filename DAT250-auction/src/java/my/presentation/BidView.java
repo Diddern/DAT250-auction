@@ -12,8 +12,8 @@ import entities.Auction;
 import entities.Bid;
 import entities.Seller;
 import javax.ejb.EJB;
-import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
@@ -79,13 +79,11 @@ public class BidView {
             
             if (auction.getBid() != null) {
                 if (this.bid.getAmount() <= auction.getBid().getAmount()) {
-                    //Set message that indicates bid too small
-                    displayError("Bid must be bigger than the current bid of $" + auction.getBid().getAmount());
+                    displayError("Your bid is too small");
                     return "productView.xhtml?faces-redirect=true&id="+auction_id;
                 }
             } else if (auction.getMin_price() != null && this.bid.getAmount() < auction.getMin_price()) {
-                //set message that bid is too small
-                displayError("Bid must be bigger than the minimum bid of $" + auction.getMin_price());
+                displayError("Your bid is too small");
                 return "productView.xhtml?faces-redirect=true&id="+auction_id;
             }
                
@@ -95,6 +93,7 @@ public class BidView {
             this.bid.setSeller(seller);
             this.bidFacade.create(this.bid);
             this.bid = new Bid(); //Reset bid
+            displayError(null); //Reset potential error msg
         } catch (NumberFormatException nfe) {
             displayError("Bid must contain only numbers");
         }
@@ -102,7 +101,7 @@ public class BidView {
     }
 
     private void displayError(String errorMsg) {
-        FacesContext.getCurrentInstance()
-                .addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, errorMsg, null));
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getExternalContext().getSessionMap().put("bidError", errorMsg);
     }
 }
