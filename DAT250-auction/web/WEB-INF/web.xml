@@ -18,9 +18,28 @@
             30
         </session-timeout>
     </session-config>
-        <welcome-file-list>
+    <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Access to resources</display-name>
+        <web-resource-collection>
+            <web-resource-name>resources</web-resource-name>
+            <description/>
+            <url-pattern>/resources/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>javax.faces.resource</web-resource-name>
+            <description/>
+            <url-pattern>/javax.faces.resource/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <description/>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
     <security-constraint>
         <display-name>Constraint1</display-name>
         <web-resource-collection>
@@ -48,5 +67,5 @@
     <security-role>
         <description/>
         <role-name>AuctionUser</role-name>
-    </security-role> 
-    </web-app>
+    </security-role>
+</web-app>
