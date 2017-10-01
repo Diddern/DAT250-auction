@@ -27,6 +27,7 @@ public class Auction implements Serializable {
     private String product_name;
     private String description;
     private Long min_price;
+    private boolean isActive = true;
     private Long unix_end_time;
     @ManyToOne
     private Category category;
@@ -35,8 +36,6 @@ public class Auction implements Serializable {
     @OneToOne
     private Bid bid;
 
-    
-    
     public Seller getSeller() {
         return seller;
     }
@@ -101,6 +100,14 @@ public class Auction implements Serializable {
         this.category = category;
     }
 
+    public boolean isIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
