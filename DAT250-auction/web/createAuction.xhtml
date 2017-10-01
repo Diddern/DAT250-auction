@@ -22,20 +22,26 @@
             <f:view>
                 <h:form>
                     <div class="form-row">
-                        <h:outputLabel value="Product name"/><h:inputText value="#{AuctionView.auction.product_name}"/>
+                        <h:outputLabel value="Product name"/>
+                        <h:inputText value="#{AuctionView.auction.product_name}" 
+                                     required="true"/>
                     </div>
                     <div class="form-row">
-                        <h:outputLabel value="Description"/><h:inputText value="#{AuctionView.auction.description}"/>
+                        <h:outputLabel value="Description"/>
+                        <h:inputText value="#{AuctionView.auction.description}"
+                                     required="true"/>
                     </div>
                     <div class="form-row">
                         <h:outputLabel value="Minimum price"/>
-                        <h:inputText value="#{AuctionView.auction.min_price}">
+                        <h:inputText value="#{AuctionView.auction.min_price}"
+                                     required="true">
                             <f:validateLongRange minimum="1" />
                         </h:inputText>
                     </div>
                     <div class="form-row">
                         <h:outputLabel  value="Duration in hours"/>
-                        <h:inputText value="#{AuctionView.auction.unix_end_time}">
+                        <h:inputText value="#{AuctionView.auction.unix_end_time}" 
+                                     required="true">
                             <f:validateLongRange minimum="1" />
                         </h:inputText>
                     </div>
