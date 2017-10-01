@@ -35,8 +35,6 @@ public class Auction implements Serializable {
     @OneToOne
     private Bid bid;
 
-    
-    
     public Seller getSeller() {
         return seller;
     }

@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:custom="http://example.com">
+      xmlns:custom="http://example.com"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>fint.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,6 +18,7 @@ and open the template in the editor.
         <c:set var="singleAuctionId" value="#{navigationController.singleAuctionId}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
+        <c:set var="user_id" value="9871" />
 
         <div class="top-menu">
             <div class="logo">
@@ -69,8 +71,16 @@ and open the template in the editor.
                             <h:outputLabel class="sidebar-time-label" value="#{auction.remainingTime}"/>
                         </div>
                         <div class="form-row flex-column">
-                            <h:inputText class='your-bid bid-input' value="$$$"/>
-                            <h:commandButton class='enter-bid bid-button' action="#{AuctionView.index}" value="Place bid"/>
+                            <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
+                            <h:commandButton
+                                class='enter-bid bid-button'
+                                action="#{BidView.postBid}" 
+                                value="Place bid">
+                                <f:param name="auction_id" value="#{auction.id}" />
+                                <f:param name="user_id" value="#{user_id}" />
+                                <f:param name = "currentBid" value = "#{auction.bid.amount}" />
+                                <f:param name = "minimumPrice" value = "#{auction.min_price}" />
+                            </h:commandButton>
                         </div>
                     </h:form>
                 </div>

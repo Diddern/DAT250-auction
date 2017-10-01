@@ -50,9 +50,10 @@ public class AuctionView {
     }
     
     public Auction getSingleAuction(Long singleAuctionId) {
+        if (singleAuctionId == null) return null;
         return this.auctionFacade.find(singleAuctionId);
     }
-       
+    
     public String postAuction() {
         this.auctionFacade.create(this.auction);
         return "auctionPosted";

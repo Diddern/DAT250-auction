@@ -35,11 +35,19 @@ public class SellerView {
         return seller;
     }
     
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
+    
     public List<Seller> getAllSellers() {
         return sellerFacade.findAll();
     }
     
     public int getNumberOfSellers(){
         return sellerFacade.findAll().size();
+    }
+    
+    public Seller getSingleSeller(Long sellerId) {
+        return sellerId == null ? null : this.sellerFacade.find(sellerId);
     }
 }
