@@ -18,9 +18,9 @@
                     <img src='resources/images/logo.png'></img>
                 </div>
                 <div class="top-buttons">
-                <h:button class='login-button'  value="My account"/>
-                <h:button class='sign-out'  value="Sign out"/>
-            </div>
+                    <h:button class='login-button'  value="My account"/>
+                    <h:button class='sign-out'  value="Sign out"/>
+                </div>
             </div>
             <div class="container">
                 <h:form>
@@ -32,7 +32,7 @@
                 <h1>Recommended for you</h1>
                 <h:form>
                     <div class='inner-main-container'>
-                        <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
+                        <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
                             <div class='form-column'>
                                 <div class="form-row">
                                     <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>

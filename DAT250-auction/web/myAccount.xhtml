@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>FINT.no</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,13 +13,13 @@
     </h:head>
     <body>
          <div class="top-menu">
-                <div class="logo">
-                    <img src='resources/images/logo.png'></img>
-                </div>
-                <div class="top-buttons">
-                    <h:button class='sign-out'  value="Sign in"/>
-                </div>
+            <div class="logo">
+                <img src='resources/images/logo.png'></img>
             </div>
+            <div class="top-buttons">
+                <h:button class='sign-out'  value="Sign in"/>
+            </div>
+        </div>
         <div class="container">
             <h:button class='sellItem' value="Sell item"/>
             <div class="form-row">
@@ -26,7 +27,7 @@
             </div>
             <h:form>
                 <div class='inner-main-container'>
-                    <ui:repeat var="auction" value="#{AuctionView.allAuctions}">
+                    <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
                         <div class='form-column'>
                             <div class="form-row">
                                 <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
@@ -46,7 +47,7 @@
                                 </div>
                             </div>
                             <div class='buttonLogin'>
-                                <h:commandButton class='login-button' action="#{MessageView.postMessage}" value="Cancel"/>
+                                <h:commandButton class='login-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
                             </div>
                         </div>
                     </ui:repeat>
