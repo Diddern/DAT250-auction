@@ -72,14 +72,13 @@ and open the template in the editor.
                         </div>
                         <div class="form-row flex-column">
                             <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
+                            <h:messages globalOnly="true" />
                             <h:commandButton
                                 class='enter-bid bid-button'
                                 action="#{BidView.postBid}" 
                                 value="Place bid">
                                 <f:param name="auction_id" value="#{auction.id}" />
                                 <f:param name="user_id" value="#{user_id}" />
-                                <f:param name = "currentBid" value = "#{auction.bid.amount}" />
-                                <f:param name = "minimumPrice" value = "#{auction.min_price}" />
                             </h:commandButton>
                         </div>
                     </h:form>
