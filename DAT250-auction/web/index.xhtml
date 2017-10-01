@@ -54,7 +54,8 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class='button-login'>
-                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView}" value="View auction">
+                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView(auction.id)}" value="View auction">
+                                        <f:setPropertyActionListener target="#{SessionBean.singleProductId}" value="#{auction.id}" />  
                                         <f:param name = "singleAuctionId" value = "#{auction.id}"/>
                                     </h:commandButton>
                                 </div>

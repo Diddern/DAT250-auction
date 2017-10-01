@@ -67,7 +67,7 @@ public class BidView {
         this.bid = bid;
     }
 
-    public void postBid() {
+    public String postBid() {
         String userId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("user_id");
         String auctionId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("auction_id");
         
@@ -81,12 +81,12 @@ public class BidView {
                 if (this.bid.getAmount() <= auction.getBid().getAmount()) {
                     //Set message that indicates bid too small
                     displayError("Bid must be bigger than the current bid of $" + auction.getBid().getAmount());
-                    return;
+                    return "productView.xhtml?faces-redirect=true&id="+auction_id;
                 }
             } else if (auction.getMin_price() != null && this.bid.getAmount() < auction.getMin_price()) {
                 //set message that bid is too small
                 displayError("Bid must be bigger than the minimum bid of $" + auction.getMin_price());
-                return;
+                return "productView.xhtml?faces-redirect=true&id="+auction_id;
             }
                
             auction.setBid(this.bid);
@@ -94,9 +94,11 @@ public class BidView {
             this.bid.setAuction(auction);
             this.bid.setSeller(seller);
             this.bidFacade.create(this.bid);
+            this.bid = new Bid(); //Reset bid
         } catch (NumberFormatException nfe) {
             displayError("Bid must contain only numbers");
         }
+        return "productView.xhtml?faces-redirect=true&id="+auctionId;
     }
 
     private void displayError(String errorMsg) {

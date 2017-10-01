@@ -15,7 +15,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <body>
-        <c:set var="singleAuctionId" value="#{navigationController.singleAuctionId}" />
+        <c:set var="singleAuctionId" value="#{param.id}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
         <c:set var="user_id" value="9871" />
@@ -31,11 +31,11 @@ and open the template in the editor.
         </div>
         <div class="container">
             <h:outputStylesheet name="css/productView.css"/>
-            
+
             <div class='inner-main-container'>
-            <div class="form-row">
-                <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
-            </div>
+                <div class="form-row">
+                    <img src='https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif'></img>
+                </div>
                 <div class='sideBySide'>
                     <div class="form-row flex-column">
                         <h:outputLabel class="auction-header" value="#{auction.product_name}"/>
