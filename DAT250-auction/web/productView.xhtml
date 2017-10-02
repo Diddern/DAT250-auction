@@ -23,11 +23,11 @@
                 <div class="logo">
                     <img src='resources/images/logo.png'></img>
                 </div>
-                <div class="top-buttons">
-                    <h:button id="backButton" value="Back" />
-                    <h:button class="my-account-button" value="My Account" />
-                    <h:button class='sign-out'  value="Sign in"/>
-                </div>
+                <h:form class="top-buttons">
+                    <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
+                    <h:commandButton class="my-account-button" value="My Account" />
+                    <h:commandButton class='sign-out'  value="Sign in"/>
+                </h:form>
             </div>
             <div class="container">            
                 <div class='inner-main-container'>

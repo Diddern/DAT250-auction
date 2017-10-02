@@ -44,7 +44,7 @@ body{
 .logo{
 }
 
-.sign-out, #backButton{
+.sign-out, .backButton{
     font-size: large;
     border-radius: 5%;
     color: white;

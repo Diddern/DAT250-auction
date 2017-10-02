@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     width: 75vw;
+    background-color: transparent;
 }
 
 .outer-container {
