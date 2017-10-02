@@ -10,52 +10,55 @@
         <h:outputStylesheet name="css/createAuction.css"/>
     </h:head>
     <body>
-        <div class="top-menu">
-            <div class="logo">
-                <img src='resources/images/logo.png'></img>
+        <div class="outer-container">
+            <div class="top-menu">
+                <div class="logo">
+                    <img src='resources/images/logo.png'></img>
+                </div>
+                <div class="top-buttons">
+                    <h:button class='sign-out'  value="Sign in"/>
+                </div>
             </div>
-            <div class="top-buttons">
-                <h:button class='sign-out'  value="Sign in"/>
+            <div class="container">
+                <f:view>
+                    <h:form class="createAuctionForm">
+                        <div class="form-row">
+                            <h:outputLabel value="Product name"/>
+                            <h:inputText value="#{AuctionView.auction.product_name}" 
+                                         required="true"/>
+                        </div>
+                        <div class="form-row">
+                            <h:outputLabel value="Description"/>
+                            <h:inputText value="#{AuctionView.auction.description}"
+                                         required="true"/>
+                        </div>
+                        <div class="form-row">
+                            <h:outputLabel value="Minimum price"/>
+                            <h:inputText value="#{AuctionView.auction.min_price}"
+                                         required="true">
+                                <f:validateLongRange minimum="1" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-row">
+                            <h:outputLabel  value="Duration in hours"/>
+                            <h:inputText class="duration" value="#{AuctionView.auction.unix_end_time}" 
+                                         required="true">
+                                <f:validateLongRange minimum="1" />
+                            </h:inputText>
+                        </div>
+                        <div class="form-row" id="categoryDropDown">
+                            <h:outputLabel value="Category" />
+                            <h:selectOneMenu value="#{AuctionView.auction.category}" converter="category">
+                                <f:selectItems value="#{CategoryView.allCategories}" var="category"
+                                               itemLabel="#{category.name}" itemValue="#{category}" />
+                            </h:selectOneMenu>
+                        </div>
+                        <div class="button">
+                            <h:commandButton class="postButton" action="#{AuctionView.postAuction}" value="Start Auction"/>
+                        </div>
+                    </h:form>
+                </f:view>
             </div>
-        </div>
-        <div class="container">
-            <f:view>
-                <h:form>
-                    <div class="form-row">
-                        <h:outputLabel value="Product name"/>
-                        <h:inputText value="#{AuctionView.auction.product_name}" 
-                                     required="true"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel value="Description"/>
-                        <h:inputText value="#{AuctionView.auction.description}"
-                                     required="true"/>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel value="Minimum price"/>
-                        <h:inputText value="#{AuctionView.auction.min_price}"
-                                     required="true">
-                            <f:validateLongRange minimum="1" />
-                        </h:inputText>
-                    </div>
-                    <div class="form-row">
-                        <h:outputLabel  value="Duration in hours"/>
-                        <h:inputText class="duration" value="#{AuctionView.auction.unix_end_time}" 
-                                     required="true">
-                            <f:validateLongRange minimum="1" />
-                        </h:inputText>
-                    </div>
-                    <div class="form-row">
-                        <h:selectOneMenu value="#{AuctionView.auction.category}" converter="category">
-                            <f:selectItems value="#{CategoryView.allCategories}" var="category"
-                                           itemLabel="#{category.name}" itemValue="#{category}" />
-                        </h:selectOneMenu>
-                    </div>
-                    <div class="button">
-                        <h:commandButton class="postButton" action="#{AuctionView.postAuction}" value="Start Auction"/>
-                    </div>
-                </h:form>
-            </f:view>
         </div>
     </body>
 </html>

@@ -12,11 +12,13 @@
         <h:outputStylesheet name="css/myAccount.css"/>
     </h:head>
     <body>
+        <div class="outer-container">
          <div class="top-menu">
             <div class="logo">
                 <img src='resources/images/logo.png'></img>
             </div>
             <div class="top-buttons">
+                <h:button id="backButton" value="Back" />
                 <h:button class='sign-out'  value="Sign in"/>
             </div>
         </div>
@@ -53,6 +55,7 @@
                     </ui:repeat>
                 </div>
             </h:form>
+        </div>
         </div>
     </body>
 </html>

@@ -31,9 +31,19 @@
 }
 
 form .postButton{
-    font-size: 40px;
+    font-size: xx-large;
     padding: 10px;
     color: white;
-    background-color: #01c64c;
-    border-radius: 1px; 
+    border-radius: 5%;
+    background-color: rgb(0,124,253);
+    border: 0.5px solid rgb(220,220,220);
+}
+
+
+#categoryDropDown {
+    margin-bottom: 2.5%;
+}
+
+.createAuctionForm {
+    padding: 5%;
 }
