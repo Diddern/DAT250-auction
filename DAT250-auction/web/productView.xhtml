@@ -25,8 +25,8 @@
                 </div>
                 <h:form class="top-buttons">
                     <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
-                    <h:commandButton class="my-account-button" value="My Account" />
-                    <h:commandButton class='sign-out'  value="Sign in"/>
+                    <h:commandButton class="my-account-button" value="My Account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
                 </h:form>
             </div>
             <div class="container">            
