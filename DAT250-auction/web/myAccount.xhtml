@@ -10,52 +10,54 @@
         <h:outputStylesheet name="css/index_account.css"/>
         <h:outputStylesheet name="css/myAccount.css"/>
     </h:head>
-    <body>
+    <h:body>
         <div class="outer-container">
-         <div class="top-menu">
-            <div class="logo">
-                <img src='resources/images/logo.png'></img>
-            </div>
-            <h:form class="top-buttons">
-                <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
-            </h:form>
-        </div>
-        <div class="container">
-            <h:form style="width:100%">
-                <h:commandButton class='sellItem' value="Sell item" action="#{navigationController.goToNewAuction}"/>
-            </h:form>
-            <div class="form-row">
-                <h1>Your items</h1>
-            </div>
-            <h:form>
-                <div class='inner-main-container'>
-                    <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
-                        <div class='form-column'>
-                            <div class="form-row">
-                                <img class="category_img" src="#{auction.category.img_url}"></img>
-                            </div>
-                            <div class='sideBySide'>
-                                <div class="form-row auction-header">
-                                    <h:outputLabel value="#{auction.product_name}"/>
-                                </div>
-                                <div class="form-row main-view-label">
-                                    <h:outputLabel value="#{auction.bid.amount}" rendered="#{auction.bid != null}"/>
-                                    <h:outputLabel value="#{auction.min_price}" rendered="#{auction.bid == null}"/>
-                                    <h:outputLabel value="$ is the current bid" rendered="#{auction.bid != null}"/>
-                                    <h:outputLabel value="$ is the minimum bid" rendered="#{auction.bid == null}"/>
-                                </div>
-                                <div class="form-row main-view-label">
-                                    <h:outputLabel  value=" #{auction.remainingTime}"/>
-                                </div>
-                            </div>
-                            <div class='buttonLogin'>
-                                <h:commandButton class='login-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
-                            </div>
-                        </div>
-                    </ui:repeat>
+            <div class="top-menu">
+                <div class="logo">
+                    <img src='resources/images/logo.png'></img>
                 </div>
-            </h:form>
+                <h:form class="top-buttons">
+                    <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
+                    <h:commandButton class='my-account-button'  value="My account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
+                </h:form>
+            </div>
+            <div class="container">
+                <h:form style="width:100%">
+                    <h:commandButton class='sellItem' value="Sell item" action="#{navigationController.goToNewAuction}"/>
+                </h:form>
+                <div class="form-row">
+                    <h1>Your items</h1>
+                </div>
+                <h:form>
+                    <div class='inner-main-container'>
+                        <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
+                            <div class='form-column'>
+                                <div class="form-row">
+                                    <img class="category_img" src="#{auction.category.img_url}"></img>
+                                </div>
+                                <div class='sideBySide'>
+                                    <div class="form-row auction-header">
+                                        <h:outputLabel value="#{auction.product_name}"/>
+                                    </div>
+                                    <div class="form-row main-view-label">
+                                        <h:outputLabel value="#{auction.bid.amount}" rendered="#{auction.bid != null}"/>
+                                        <h:outputLabel value="#{auction.min_price}" rendered="#{auction.bid == null}"/>
+                                        <h:outputLabel value="$ is the current bid" rendered="#{auction.bid != null}"/>
+                                        <h:outputLabel value="$ is the minimum bid" rendered="#{auction.bid == null}"/>
+                                    </div>
+                                    <div class="form-row main-view-label">
+                                        <h:outputLabel  value=" #{auction.remainingTime}"/>
+                                    </div>
+                                </div>
+                                <div class='buttonLogin'>
+                                    <h:commandButton class='login-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
+                                </div>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </h:form>
+            </div>
         </div>
-        </div>
-    </body>
+    </h:body>
 </html>

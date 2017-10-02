@@ -9,15 +9,17 @@
         <h:outputStylesheet name="css/layout.css"/>
         <h:outputStylesheet name="css/createAuction.css"/>
     </h:head>
-    <body>
+    <h:body>
         <div class="outer-container">
             <div class="top-menu">
                 <div class="logo">
                     <img src='resources/images/logo.png'></img>
                 </div>
-                <div class="top-buttons">
-                    <h:button class='sign-out'  value="Sign in"/>
-                </div>
+                <h:form class="top-buttons">
+                    <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
+                    <h:commandButton class='my-account-button'  value="My account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
+                </h:form>
             </div>
             <div class="container">
                 <f:view>
@@ -60,5 +62,5 @@
                 </f:view>
             </div>
         </div>
-    </body>
+    </h:body>
 </html>
