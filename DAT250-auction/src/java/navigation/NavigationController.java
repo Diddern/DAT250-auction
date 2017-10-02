@@ -22,4 +22,12 @@ public class NavigationController implements Serializable{
     public String goToHomePage() {
         return "index?faces-redirect=true";
     }
+    
+    public String goToMyAuctions() {
+        return "myAccount?faces-redirect=true";
+    }
+    
+    public String goToNewAuction() {
+        return "createAuction?faces-redirect=true";
+    }
 }

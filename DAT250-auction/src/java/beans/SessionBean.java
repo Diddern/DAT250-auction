@@ -36,4 +36,17 @@ public class SessionBean implements Serializable {
         Object o = context.getExternalContext().getSessionMap().get("bidError");
         return o != null ? o.toString() : null;
     }
+    
+    public String getIndexMessage() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        Object o = context.getExternalContext().getSessionMap().get("indexMessage");
+        return o != null ? o.toString() : null;
+    }
+    
+    public String getClearIndexMessage() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        Object o = context.getExternalContext().getSessionMap().get("indexMessage");
+        context.getExternalContext().getSessionMap().put("indexMessage", null);
+        return o != null ? o.toString() : null;
+    }
 }

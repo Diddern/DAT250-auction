@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -66,7 +67,12 @@ public class AuctionView {
     
     public String postAuction() {
         this.auctionFacade.create(this.auction);
-        return "auctionPosted";
+        
+        String message = String.format("Your product %s is now up for sale under the category %s", auction.getProduct_name(), auction.getCategory().getName());
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getExternalContext().getSessionMap().put("indexMessage", message);        
+        
+        return "index?faces-redirect=true";
     }
     
     public void removeAuction(Long id){
