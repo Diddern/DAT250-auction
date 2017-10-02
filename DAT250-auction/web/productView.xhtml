@@ -15,7 +15,7 @@
         <c:set var="singleAuctionId" value="#{param.id}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
-        <c:set var="user_id" value="9871" />
+        <c:set var="user_id" value="#{SessionBean.userId}" />
         <c:set var="bidError" value="#{SessionBean.bidError}" />
 
         <div class="outer-container">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="form-row flex-column">
                                 <c:if test="${not empty bidError}">
-                                    <p class="bid-error"> #{bidError} </p>
+                                    <p class="bid-error"> #{SessionBean.clearBidError} </p>
                                 </c:if>
                                 <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
                                 <h:commandButton

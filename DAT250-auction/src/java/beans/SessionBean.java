@@ -19,34 +19,37 @@ import javax.faces.context.FacesContext;
 public class SessionBean implements Serializable {
 
     public SessionBean() { }
-           
-    public String getSingleProductId() {
+    
+    public String getBidError() {
+        return getKey("bidError");
+    }
+
+    public String getIndexMessage() {
+        return getKey("indexMessage");
+    }
+
+    public String getClearIndexMessage() {
+        return this.getAndClearKey("indexMessage");
+    }
+
+    public String getClearBidError() {
+        return this.getAndClearKey("bidError");
+    }
+
+    public String getUserId() {
+        return getKey("user_id") == null ? "9871" : getKey("user_id");
+    }
+
+    private String getAndClearKey(String key) {
         FacesContext context = FacesContext.getCurrentInstance();
-        Object o = context.getExternalContext().getSessionMap().get("singleProductId");
+        Object o = context.getExternalContext().getSessionMap().get(key);
+        context.getExternalContext().getSessionMap().put(key, null);
         return o != null ? o.toString() : null;
     }
 
-    public void setSingleProductId(String id) {
+    private String getKey(String key) {
         FacesContext context = FacesContext.getCurrentInstance();
-        context.getExternalContext().getSessionMap().put("singleProductId", id);
-    }
-    
-    public String getBidError() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        Object o = context.getExternalContext().getSessionMap().get("bidError");
-        return o != null ? o.toString() : null;
-    }
-    
-    public String getIndexMessage() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        Object o = context.getExternalContext().getSessionMap().get("indexMessage");
-        return o != null ? o.toString() : null;
-    }
-    
-    public String getClearIndexMessage() {
-        FacesContext context = FacesContext.getCurrentInstance();
-        Object o = context.getExternalContext().getSessionMap().get("indexMessage");
-        context.getExternalContext().getSessionMap().put("indexMessage", null);
+        Object o = context.getExternalContext().getSessionMap().get(key);
         return o != null ? o.toString() : null;
     }
 }
