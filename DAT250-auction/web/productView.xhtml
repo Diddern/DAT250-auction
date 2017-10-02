@@ -15,7 +15,7 @@
         <c:set var="singleAuctionId" value="#{param.id}" />
         <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
         <c:set var="seller" value="#{auction.seller}" />
-        <c:set var="user_id" value="9871" />
+        <c:set var="user_id" value="#{SessionBean.userId}" />
         <c:set var="bidError" value="#{SessionBean.bidError}" />
 
         <div class="outer-container">
@@ -25,11 +25,11 @@
                 </div>
                 <h:form class="top-buttons">
                     <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
-                    <h:commandButton class='my-account-button'  value="My account" action="#{navigationController.goToMyAuctions}"/>
-                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
+                    <h:commandButton class="my-account-button" value="My Account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class="sign-out"  value="Sign out" action="#{navigationController.logout}"/>
                 </h:form>
             </div>
-            <div class="container">            
+            <div class="container">
                 <div class='inner-main-container'>
                     <div class="form-row">
                         <img src="#{auction.category.img_url}" class="category-img" />
@@ -70,12 +70,12 @@
                             </div>
                             <div class="form-row flex-column">
                                 <c:if test="${not empty bidError}">
-                                    <p class="bid-error"> #{bidError} </p>
+                                    <p class="bid-error"> #{SessionBean.clearBidError} </p>
                                 </c:if>
                                 <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
                                 <h:commandButton
                                     class='enter-bid bid-button'
-                                    action="#{BidView.postBid}" 
+                                    action="#{BidView.postBid}"
                                     value="Place bid">
                                     <f:param name="auction_id" value="#{auction.id}" />
                                     <f:param name="user_id" value="#{user_id}" />

@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>New Auction</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,6 +11,7 @@
         <h:outputStylesheet name="css/createAuction.css"/>
     </h:head>
     <h:body>
+        <c:set var="seller_id" value="#{SessionBean.userId}"/>
         <div class="outer-container">
             <div class="top-menu">
                 <div class="logo">
@@ -26,7 +28,7 @@
                     <h:form class="createAuctionForm">
                         <div class="form-row">
                             <h:outputLabel value="Product name"/>
-                            <h:inputText value="#{AuctionView.auction.product_name}" 
+                            <h:inputText value="#{AuctionView.auction.product_name}"
                                          required="true" />
                         </div>
                         <div class="form-row">
@@ -43,7 +45,7 @@
                         </div>
                         <div class="form-row">
                             <h:outputLabel  value="Duration in hours"/>
-                            <h:inputText class="duration" value="#{AuctionView.auction.unix_end_time}" 
+                            <h:inputText class="duration" value="#{AuctionView.auction.unix_end_time}"
                                          required="true">
                                 <f:validateLongRange minimum="1" />
                             </h:inputText>
@@ -56,7 +58,7 @@
                             </h:selectOneMenu>
                         </div>
                         <div class="button">
-                            <h:commandButton class="postButton" action="#{AuctionView.postAuction}" value="Start Auction"/>
+                            <h:commandButton class="postButton" action="#{AuctionView.postAuction(seller_id)}" value="Start Auction" />
                         </div>
                     </h:form>
                 </f:view>

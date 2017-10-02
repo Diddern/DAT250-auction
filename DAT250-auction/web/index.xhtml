@@ -47,9 +47,7 @@
                                     </div>
                                 </div>
                                 <div class='button-login'>
-                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView(auction.id)}" value="View auction">
-                                        <f:setPropertyActionListener target="#{SessionBean.singleProductId}" value="#{auction.id}" />  
-                                    </h:commandButton>
+                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView(auction.id)}" value="View auction" />
                                 </div>
                             </div>
                         </ui:repeat>
