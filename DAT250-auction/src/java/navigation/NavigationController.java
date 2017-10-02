@@ -3,6 +3,7 @@ package navigation;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -29,5 +30,10 @@ public class NavigationController implements Serializable{
     
     public String goToNewAuction() {
         return "createAuction?faces-redirect=true";
+    }
+    
+    public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/login.xhtml?faces-redirect=true";
     }
 }
