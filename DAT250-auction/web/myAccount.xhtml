@@ -42,27 +42,21 @@
                                         <h:outputLabel value="#{auction.product_name}"/>
                                     </div>
                                     <div class="form-row main-view-label">
-                                        <h:outputLabel value="#{auction.bid.amount}" rendered="#{auction.bid != null}"/>
-                                        <h:outputLabel value="#{auction.min_price}" rendered="#{auction.bid == null}"/>
-                                        <h:outputLabel value="$ is the current bid" rendered="#{auction.bid != null}"/>
-                                        <h:outputLabel value="$ is the minimum bid" rendered="#{auction.bid == null}"/>
+                                        <custom:currentBidComponent auction="#{auction}"/>
+
                                     </div>
                                     <div class="form-row main-view-label">
                                         <h:outputLabel  value=" #{auction.remainingTime}"/>
                                     </div>
                                 </div>
-                                <div class='buttonLogin'>
-                                    <h:commandButton class='login-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
-                                </div>
                             </div>
                             <div class="cancel-button-container">
                                 <h:commandButton class='login-button cancel-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
                             </div>
-                        </div>
-                    </ui:repeat>
-                </div>
-            </h:form>
-        </div>
+                        </ui:repeat>
+                    </div>
+                </h:form>
+            </div>
         </div>
     </h:body>
 </html>

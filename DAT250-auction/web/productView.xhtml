@@ -29,7 +29,7 @@
                     <h:commandButton class="sign-out"  value="Sign out" action="#{navigationController.logout}"/>
                 </h:form>
             </div>
-            <div class="container">
+            <div class="container">            
                 <div class='inner-main-container'>
                     <div class="form-row">
                         <img src="#{auction.category.img_url}" class="category-img" />
@@ -75,7 +75,7 @@
                                 <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
                                 <h:commandButton
                                     class='enter-bid bid-button'
-                                    action="#{BidView.postBid}"
+                                    action="#{BidView.postBid}" 
                                     value="Place bid">
                                     <f:param name="auction_id" value="#{auction.id}" />
                                     <f:param name="user_id" value="#{user_id}" />
