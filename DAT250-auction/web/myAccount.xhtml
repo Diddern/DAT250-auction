@@ -49,9 +49,9 @@
                                         <h:outputLabel  value=" #{auction.remainingTime}"/>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cancel-button-container">
-                                <h:commandButton class='login-button cancel-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
+                                <div class="cancel-button-container">
+                                    <h:commandButton class='login-button cancel-button' action="#{AuctionView.removeAuction(auction.id)}" value="Cancel"/>
+                                </div>
                             </div>
                         </ui:repeat>
                     </div>
