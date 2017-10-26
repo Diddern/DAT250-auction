@@ -32,3 +32,5 @@ build/
 /DAT250-auction/nbproject/private/
 /DAT250-auction/dist/
 /WebApplication1/nbproject/private/
+.netbeans_automatic_build
+target/
