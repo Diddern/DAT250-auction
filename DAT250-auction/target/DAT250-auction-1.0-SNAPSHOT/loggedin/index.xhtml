@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>fint.no</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/layout.css"/>
+        <h:outputStylesheet name="css/index_account.css"/>
+    </h:head>
+    <h:body>
+        <c:set var="indexMessage" value="#{SessionBean.indexMessage}" />
+        <div class="outer-container"> 
+            <div class="top-menu">
+                <div class="logo">
+                    <img src='resources/images/logo.png'></img>
+                </div>
+                <h:form class="top-buttons">
+                    <h:commandButton class='my-account-button'  value="My account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
+                </h:form>
+            </div>
+            <div class="container">
+                <c:if test="${not empty indexMessage}">
+                    <p class="index-message"> #{SessionBean.clearIndexMessage} </p>
+                </c:if>
+                <h:form>
+                    <div class='inner-main-container'>
+                        <ui:repeat var="auction" value="#{AuctionView.allActiveAuctions}">
+                            <div class='form-column' onclick="#{navigationController.goToSingleView(auction.id)}">
+                                <div class="form-row">
+                                    <img class="category_img" src="#{auction.category.img_url}"></img>
+                                </div>
+                                <div class='sideBySide'>
+                                    <div class="form-row auction-header">
+                                        <h:outputLabel value="#{auction.product_name}"/>
+                                    </div>
+                                    <div class="form-row main-view-label">
+
+                                    </div>
+                                    <div class="form-row main-view-label">
+                                        <h:outputLabel  value=" #{auction.remainingTime}"/>
+                                    </div>
+                                </div>
+                                <div class='button-login'>
+                                    <h:commandButton class='login-button' action="#{navigationController.goToSingleView(auction.id)}" value="View auction" />
+                                </div>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>

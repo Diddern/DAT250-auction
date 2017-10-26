@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>FINT.NO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/layout.css"/>
+        <h:outputStylesheet name="css/login.css"/>
+    </h:head>
+    <h:body>
+        <div class="outer-container">
+            <div class="top-menu">
+                <div class="logo">
+                    <img src='resources/images/logo.png'></img>
+                </div>
+                <h:form class="top-buttons">
+                    <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
+                    <h:commandButton class='my-account-button'  value="My account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class='sign-out'  value="Sign out" action="#{navigationController.logout}"/>
+                </h:form>
+            </div>
+            <div class="container">
+                <h:panelGroup class="container">
+                    <h1>User registration</h1>
+                <form id="stuff" method="POST" action="j_security_check">
+                    <div class="form-row">
+                        <div class="login-label">Name</div> 
+                        <input class="inputField" id="un" type="text" name="j_username" autofocus="true" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Email</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Phone Number</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Address</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Zip</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Username</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Password</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Repeat Password</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <br />
+                    <div class="form-button">
+                        <input class="loginButtons" type="submit" value="Login" />
+                        <input class="loginButtons" type="reset" value="Reset" />
+                    </div>
+                </form>
+            </h:panelGroup>
+            </div>
+        </div>
+    </h:body>
+</html>
