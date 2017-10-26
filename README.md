@@ -22,7 +22,8 @@ Add the file glassfish-resources to the webserver:
 
 Build the project in NetBeans, and deploy to server.
 The project is then accessable at the adress:
-[localhost:8181/DAT250-auction/](https://localhost:8181/DAT250-auction/)
+[localhost:8181/DAT250-auction/](https://localhost:8181/DAT250-auction/)  
+Ps. you might have to accept the localy signed certificate before you can enter the application with your browser.
 
 ### Login
 The login is configured to use the security-realm 'file' in the Glassfish-server.
@@ -30,7 +31,8 @@ From the Glassfish control-panel
 **Configurations -> server-config -> security** enable *Default Principal To Role Mapping*.  
 **Configurations -> server-config -> security -> Realms -> file** press *manage users*.   Add a user (ie. admin) and place it in the 'Grup list' **AuctionUser**
 
-
-
 ## Authors
 The project is created by [Jostein Kringlen](https://github.com/JosteinKringlen), [Kristian Rosland](https://github.com/Kristianrosland), [André Dyrstad](https://github.com/AndreDyrstad) and [Didrik Sæther](https://github.com/diddern).
+
+##Notes
+The CSS is somewhat messed up in other browsers than Google Chome.
