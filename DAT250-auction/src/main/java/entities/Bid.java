@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -24,10 +25,15 @@ public class Bid implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     @OneToOne
+    @JoinColumn(name="auction_id", referencedColumnName="id")
     private Auction auction; //the auction the bid is placed on
+    
     private Long amount;
+    
     @ManyToOne
+    @JoinColumn(name="seller_id", referencedColumnName="id")
     private Seller seller; //The user that placed the bid
 
     public Seller getSeller() {

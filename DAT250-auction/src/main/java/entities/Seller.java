@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 /**
@@ -31,9 +32,14 @@ public class Seller implements Serializable {
     private String adress;
     private String zip;
     
+    
     @OneToMany
     private List<Auction> auctions;
 
+    public Seller(){
+        
+    }
+    
     public List<Auction> getAuctions() {
         return auctions;
     }

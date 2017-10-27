@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -29,11 +30,17 @@ public class Auction implements Serializable {
     private Long min_price;
     private boolean isActive = true;
     private Long unix_end_time;
+    
     @ManyToOne
+    @JoinColumn(name="category_id", referencedColumnName="id")
     private Category category;
+    
     @ManyToOne
+    @JoinColumn(name="seller_id", referencedColumnName="id")
     private Seller seller;
+    
     @OneToOne
+    @JoinColumn(name="bid_id", referencedColumnName="id")
     private Bid bid;
 
     public Seller getSeller() {

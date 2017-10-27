@@ -9,8 +9,8 @@ edu/wctc/maven/glassfish/jsfsecure/jsfbean/LogoutBean.class
 my/presentation/MessageView.class
 my/presentation/AuctionView.class
 entities/Bid.class
-my/presentation/CategoryView.class
 entities/Category_.class
+my/presentation/CategoryView.class
 boundary/SellerFacade.class
 entities/Auction.class
 entities/Seller.class
