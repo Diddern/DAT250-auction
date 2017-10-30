@@ -1,10 +1,12 @@
 boundary/AbstractFacade.class
 converters/CategoryConverter.class
 entities/Category.class
+ws/AuctionServer.class
 converters/EntityConverter.class
 edu/wctc/maven/glassfish/jsfsecure/util/HashedPasswordGenerator.class
 entities/Auction_.class
 boundary/BidFacade.class
+rest/RestService.class
 edu/wctc/maven/glassfish/jsfsecure/jsfbean/LogoutBean.class
 my/presentation/MessageView.class
 my/presentation/AuctionView.class
@@ -24,5 +26,6 @@ boundary/MessageFacade.class
 navigation/NavigationController.class
 my/presentation/BidView.class
 my/presentation/SellerView.class
+ws/AuctionServerImpl.class
 beans/SessionBean.class
 entities/Message_.class

@@ -13,12 +13,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author ady
  */
 @Entity
+@XmlRootElement
 public class Seller implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,6 +41,19 @@ public class Seller implements Serializable {
     public Seller(){
         
     }
+
+    public Seller(Long id, Double rating, String name, int phoneNumber, String email, String adress, String zip, List<Auction> auctions) {
+        this.id = id;
+        this.rating = rating;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.adress = adress;
+        this.zip = zip;
+        this.auctions = auctions;
+    }
+    
+    
     
     public List<Auction> getAuctions() {
         return auctions;

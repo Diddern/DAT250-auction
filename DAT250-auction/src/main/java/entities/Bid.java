@@ -27,13 +27,13 @@ public class Bid implements Serializable {
     private Long id;
     
     @OneToOne
-    @JoinColumn(name="auction_id", referencedColumnName="id")
+    @JoinColumn(name="auction_id")
     private Auction auction; //the auction the bid is placed on
     
     private Long amount;
     
     @ManyToOne
-    @JoinColumn(name="seller_id", referencedColumnName="id")
+    @JoinColumn(name="seller_id")
     private Seller seller; //The user that placed the bid
 
     public Seller getSeller() {

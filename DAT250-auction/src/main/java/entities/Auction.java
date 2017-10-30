@@ -13,12 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author kristianrosland
  */
 @Entity
+@XmlRootElement
 public class Auction implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -32,17 +34,32 @@ public class Auction implements Serializable {
     private Long unix_end_time;
     
     @ManyToOne
-    @JoinColumn(name="category_id", referencedColumnName="id")
+    @JoinColumn(name="category_id")
     private Category category;
     
     @ManyToOne
-    @JoinColumn(name="seller_id", referencedColumnName="id")
+    @JoinColumn(name="seller_id")
     private Seller seller;
     
     @OneToOne
-    @JoinColumn(name="bid_id", referencedColumnName="id")
+    @JoinColumn(name="bid_id")
     private Bid bid;
 
+    public Auction(Long id, String product_name, String description, Long min_price, Long unix_end_time, Category category, Seller seller, Bid bid) {
+        this.id = id;
+        this.product_name = product_name;
+        this.description = description;
+        this.min_price = min_price;
+        this.unix_end_time = unix_end_time;
+        this.category = category;
+        this.seller = seller;
+        this.bid = bid;
+    }
+
+    public Auction(){
+        
+    }
+    
     public Seller getSeller() {
         return seller;
     }
@@ -145,7 +162,7 @@ public class Auction implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Auction[ id=" + id + " ]";
+        return "Auction{" + "id=" + id + ", product_name=" + product_name + ", description=" + description + ", min_price=" + min_price + ", isActive=" + isActive + ", unix_end_time=" + unix_end_time + ", category=" + category + ", seller=" + seller + ", bid=" + bid + '}';
     }
 
 }

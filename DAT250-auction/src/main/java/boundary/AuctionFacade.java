@@ -6,6 +6,8 @@
 package boundary;
 
 import entities.Auction;
+import java.util.List;
+import java.util.stream.Collectors;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,6 +29,16 @@ public class AuctionFacade extends AbstractFacade<Auction> {
 
     public AuctionFacade() {
         super(Auction.class);
+    }
+    
+    public List<Auction> getAllActiveAuctions() {
+        long now = System.currentTimeMillis();
+        return this.findAll()
+                .stream()
+                .filter(a -> a.getUnix_end_time() > now)
+                .filter(a -> a.isIsActive())
+                .sorted((a,b) -> Long.compare(a.getUnix_end_time(), b.getUnix_end_time()))
+                .collect(Collectors.toList());
     }
     
 }

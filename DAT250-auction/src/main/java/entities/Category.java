@@ -10,12 +10,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author kristianrosland
  */
 @Entity
+@XmlRootElement
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,6 +27,16 @@ public class Category implements Serializable {
     private String name;
     private String img_url;
 
+    public Category(Long id, String name, String img_url) {
+        this.id = id;
+        this.name = name;
+        this.img_url = img_url;
+    }
+    
+    public Category(){
+        
+    }
+    
     public String getImg_url() {
         return img_url;
     }
