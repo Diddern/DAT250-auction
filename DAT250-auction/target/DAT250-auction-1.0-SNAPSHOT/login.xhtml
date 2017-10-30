@@ -8,11 +8,12 @@
         <h:outputStylesheet name="css/layout.css"/>
         <h:outputStylesheet name="css/login.css"/>
         <h:outputStylesheet name="font-awesome/css/font-awesome.min.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
     </h:head>
     <h:body>
         <div class="outer-container">
             <div class="header">
-                <img src='resources/images/logo.png'></img>
+                <h:graphicImage name="images/logo.png" />
             </div>
             <h:panelGroup class="container">
                 <form id="stuff" method="POST" action="j_security_check">

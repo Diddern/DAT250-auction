@@ -9,13 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet name="css/layout.css"/>
         <h:outputStylesheet name="css/createAuction.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
     </h:head>
     <h:body>
         <c:set var="seller_id" value="#{SessionBean.userId}"/>
         <div class="outer-container">
             <div class="top-menu">
                 <div class="logo">
-                    <img src='resources/images/logo.png'></img>
+                    <h:graphicImage name="images/logo.png" />
                 </div>
                 <h:form class="top-buttons">
                     <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
