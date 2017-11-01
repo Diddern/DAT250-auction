@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Seller implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 6L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -32,7 +32,6 @@ private EntityManager em;
     }
     
     public Message bidForAuction(Bid newBid){
-        
         return null;
     }
     

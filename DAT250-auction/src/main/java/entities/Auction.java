@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -23,7 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Auction implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 5L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -45,21 +46,11 @@ public class Auction implements Serializable {
     @JoinColumn(name="bid_id")
     private Bid bid;
 
-    public Auction(Long id, String product_name, String description, Long min_price, Long unix_end_time, Category category, Seller seller, Bid bid) {
-        this.id = id;
-        this.product_name = product_name;
-        this.description = description;
-        this.min_price = min_price;
-        this.unix_end_time = unix_end_time;
-        this.category = category;
-        this.seller = seller;
-        this.bid = bid;
-    }
-
     public Auction(){
         
     }
     
+    @XmlTransient
     public Seller getSeller() {
         return seller;
     }
@@ -67,7 +58,8 @@ public class Auction implements Serializable {
     public void setSeller(Seller seller) {
         this.seller = seller;
     }
-
+    
+    @XmlTransient
     public Bid getBid() {
         return bid;
     }
@@ -115,7 +107,8 @@ public class Auction implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
+    @XmlTransient
     public Category getCategory() {
         return this.category;
     }

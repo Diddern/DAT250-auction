@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
