@@ -41,4 +41,9 @@ public class AuctionFacade extends AbstractFacade<Auction> {
                 .collect(Collectors.toList());
     }
     
+        public Auction getSingleAuction(Long singleAuctionId) {
+        if (singleAuctionId == null) return null;
+        return this.find(singleAuctionId);
+    }
+    
 }

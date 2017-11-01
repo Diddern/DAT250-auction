@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 public class Auction implements Serializable {
 
-    private static final long serialVersionUID = 5L;
+    private static final long serialVersionUID = 8L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

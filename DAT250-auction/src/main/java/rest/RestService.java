@@ -24,5 +24,13 @@ public class RestService extends Application {
     public List<Auction> getAuctions() throws Exception{
         return auctionFacade.getAllActiveAuctions();
     }
+    
+    @GET
+    @Path("/singleAuction")
+    @Produces(MediaType.APPLICATION_XML)
+    public Auction getAuction(@QueryParam("id")Long id) throws Exception{
+        return auctionFacade.getSingleAuction(id);
+    }
+    
 }
 
