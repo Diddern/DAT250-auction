@@ -1,8 +1,6 @@
 package ws;
 
 import entities.Auction;
-import entities.Bid;
-import entities.Message;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -14,7 +12,6 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface AuctionServer {
     
     @WebMethod public List<Auction> getActiveAuctions();
-    @WebMethod public Message bidForAuction(Bid newBid);
-    @WebMethod public String test();
-    
+    @WebMethod public String bidForAuction(Long amount, Long user_id, Long auction_id);
+        
 }
