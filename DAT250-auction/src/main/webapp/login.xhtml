@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Login - fint.no</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/layout.css"/>
+        <h:outputStylesheet name="css/login.css"/>
+        <h:outputStylesheet name="font-awesome/css/font-awesome.min.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+    </h:head>
+    <h:body>
+        <div class="outer-container">
+            <div class="header">
+                <h:graphicImage name="images/logo.png" />
+            </div>
+            <h:panelGroup class="container">
+                <form id="stuff" method="POST" action="j_security_check">
+                    <div class="form-row">
+                        <div class="login-label">Username</div> 
+                        <input class="inputField" id="un" type="text" name="j_username" autofocus="true" />
+                    </div>
+                    <div class="form-row">
+                        <div class="login-label">Password</div> 
+                        <input class="inputField" id="pw" type="password" name="j_password" />
+                    </div>
+                    <br />
+                    <div class="form-button">
+                        <input class="loginButtons" type="submit" value="Login" />
+                        <input class="loginButtons" type="reset" value="Reset" />
+                    </div>
+                </form>
+            </h:panelGroup> 
+        </div>
+    </h:body>
+</html>
+

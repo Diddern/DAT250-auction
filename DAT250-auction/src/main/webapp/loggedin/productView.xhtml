@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:custom="http://example.com"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>FINT.no</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/layout.css"/>
+        <h:outputStylesheet name="css/productView.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+    </h:head>
+    <h:body>
+        <c:set var="singleAuctionId" value="#{param.id}" />
+        <c:set var="auction" value="#{AuctionView.getSingleAuction(singleAuctionId)}" />
+        <c:set var="seller" value="#{auction.seller}" />
+        <c:set var="user_id" value="#{SessionBean.userId}" />
+        <c:set var="bidError" value="#{SessionBean.bidError}" />
+
+        <div class="outer-container">
+            <div class="top-menu">
+                <div class="logo">
+                    <h:graphicImage name="images/logo.png" />
+                </div>
+                <h:form class="top-buttons">
+                    <h:commandButton class="backButton" value="Back" action="#{navigationController.goToHomePage}"/>
+                    <h:commandButton class="my-account-button" value="My Account" action="#{navigationController.goToMyAuctions}"/>
+                    <h:commandButton class="sign-out"  value="Sign out" action="#{navigationController.logout}"/>
+                </h:form>
+            </div>
+            <div class="container">            
+                <div class='inner-main-container'>
+                    <div class="form-row">
+                        <img src="#{auction.category.img_url}" class="category-img" />
+                    </div>
+                    <div class='sideBySide'>
+                        <div class="form-row flex-column">
+                            <h:outputLabel class="auction-header" value="#{auction.product_name}"/>
+                            <h:outputLabel class="category-label" value="#{auction.category.name}" />
+                        </div>
+                        <div class="form-row flex-column">
+                            <custom:currentBidComponent auction="#{auction}"/>
+                        </div>
+                        <div class="form-row flex-column">
+                            <h:outputLabel class="description-header" value="Description"/>
+                            <h:outputLabel class="info-text" value="#{auction.description}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class='inner-sidebar-container'>
+                    <div class="sidebar-seller-container">
+                        <div class="form-row seller-image-container">
+                            <img class="seller-image"
+                                 src='http://www.iconarchive.com/download/i102645/graphicloads/flat-finance/person.ico'/>
+                        </div>
+                        <div class="form-row flex-align-center">
+                            <h:outputLabel value="#{seller.name}"/>
+                            <h:outputLabel value="#{seller.phoneNumber}"/>
+                            <h:outputLabel value="#{seller.email}"/>
+                        </div>
+                    </div>
+                    <div class="sidebar-bid-info-container">
+                        <h:form class="sidebar-form">
+                            <div class="form-row flex-column">
+                                <custom:currentBidComponent auction="#{auction}" />
+                            </div>
+                            <div class="form-row">
+                                <h:outputLabel class="sidebar-time-label" value="#{auction.remainingTime}"/>
+                            </div>
+                            <div class="form-row flex-column">
+                                <c:if test="${not empty bidError}">
+                                    <p class="bid-error"> #{SessionBean.clearBidError} </p>
+                                </c:if>
+                                <h:inputText class='your-bid bid-input' required="true" value="#{BidView.bid.amount}"/>
+                                <h:commandButton
+                                    class='enter-bid bid-button'
+                                    action="#{BidView.postBid}" 
+                                    value="Place bid">
+                                    <f:param name="auction_id" value="#{auction.id}" />
+                                    <f:param name="user_id" value="#{user_id}" />
+                                </h:commandButton>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
